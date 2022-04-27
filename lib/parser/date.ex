@@ -4,24 +4,15 @@ defmodule DateTimeParser.Parser.Date do
   representing dates.
   """
   @behaviour DateTimeParser.Parser
-
-  import NimbleParsec
-  import DateTimeParser.Combinators.Date
+  alias DateTimeParser.Combinators
   import DateTimeParser.Formatters, only: [format_token: 2, clean: 1]
-
-  defparsecp(
-    :do_parse,
-    vocal_day()
-    |> optional()
-    |> concat(formal_date())
-  )
 
   @impl DateTimeParser.Parser
   def preflight(parser), do: {:ok, parser}
 
   @impl DateTimeParser.Parser
   def parse(%{string: string} = parser) do
-    case do_parse(string) do
+    case Combinators.parse_date(string) do
       {:ok, tokens, _, _, _, _} -> from_tokens(parser, tokens)
       _ -> {:error, :failed_to_parse}
     end
