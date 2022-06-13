@@ -17,7 +17,6 @@ defmodule DateTimeParser.MixProject do
       docs: docs(),
       start_permanent: Mix.env() == :prod,
       preferred_cli_env: [
-        dialyzer: :test,
         tests: :test,
         benchmark: :bench,
         profile: :bench
