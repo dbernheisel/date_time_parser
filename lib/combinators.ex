@@ -1,5 +1,5 @@
 # Generated from lib/combinators.ex.exs, do not edit.
-# Generated at 2022-10-07 14:27:25Z.
+# Generated at 2022-10-07 14:55:58Z.
 
 defmodule DateTimeParser.Combinators do
   @moduledoc false
@@ -22969,13 +22969,9 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__780(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 116 or
-              x0 === 97 or
-              x0 === 115 or x0 === 100 or x0 === 116 or x0 === 101 or x0 === 115 or x0 === 100 or
-              x0 === 116 or
-              x0 === 111 or x0 === 115 or x0 === 100 or x0 === 116 or x0 === 108 or x0 === 107 or
-              x0 === 107 or
-              x0 === 107 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 115 do
+       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 101 or
+              x0 === 111 or
+              x0 === 108 or x0 === 107 do
     [acc | stack] = stack
     parse_datetime_us__777(rest, acc, stack, context, line, offset)
   end
@@ -28399,13 +28395,9 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__916(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 116 or
-              x0 === 97 or
-              x0 === 115 or x0 === 100 or x0 === 116 or x0 === 101 or x0 === 115 or x0 === 100 or
-              x0 === 116 or
-              x0 === 111 or x0 === 115 or x0 === 100 or x0 === 116 or x0 === 108 or x0 === 107 or
-              x0 === 107 or
-              x0 === 107 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 115 do
+       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 101 or
+              x0 === 111 or
+              x0 === 108 or x0 === 107 do
     [acc | stack] = stack
     parse_datetime_us__913(rest, acc, stack, context, line, offset)
   end
@@ -41411,13 +41403,9 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__776(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 116 or
-              x0 === 97 or
-              x0 === 115 or x0 === 100 or x0 === 116 or x0 === 101 or x0 === 115 or x0 === 100 or
-              x0 === 116 or
-              x0 === 111 or x0 === 115 or x0 === 100 or x0 === 116 or x0 === 108 or x0 === 107 or
-              x0 === 107 or
-              x0 === 107 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 115 do
+       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 101 or
+              x0 === 111 or
+              x0 === 108 or x0 === 107 do
     [acc | stack] = stack
     parse_datetime__773(rest, acc, stack, context, line, offset)
   end
@@ -44171,13 +44159,9 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__912(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 116 or
-              x0 === 97 or
-              x0 === 115 or x0 === 100 or x0 === 116 or x0 === 101 or x0 === 115 or x0 === 100 or
-              x0 === 116 or
-              x0 === 111 or x0 === 115 or x0 === 100 or x0 === 116 or x0 === 108 or x0 === 107 or
-              x0 === 107 or
-              x0 === 107 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 115 do
+       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 101 or
+              x0 === 111 or
+              x0 === 108 or x0 === 107 do
     [acc | stack] = stack
     parse_datetime__909(rest, acc, stack, context, line, offset)
   end
@@ -56413,13 +56397,9 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_time__59(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 116 or
-              x0 === 97 or
-              x0 === 115 or x0 === 100 or x0 === 116 or x0 === 101 or x0 === 115 or x0 === 100 or
-              x0 === 116 or
-              x0 === 111 or x0 === 115 or x0 === 100 or x0 === 116 or x0 === 108 or x0 === 107 or
-              x0 === 107 or
-              x0 === 107 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 97 or x0 === 115 do
+       when x0 === 116 or x0 === 109 or x0 === 97 or x0 === 115 or x0 === 100 or x0 === 101 or
+              x0 === 111 or
+              x0 === 108 or x0 === 107 do
     [acc | stack] = stack
     parse_time__56(rest, acc, stack, context, line, offset)
   end

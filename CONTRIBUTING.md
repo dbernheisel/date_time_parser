@@ -5,8 +5,8 @@ will generate these accordingly before a release.
 
 To run tests:
 ```shell
-$ # This will run tests, regenerate EXAMPLES.md, run Credo in strict mode, and
-$ # run dialyzer to ensure types are true.
+$ # This will run tests, regenerate EXAMPLES.livemd,
+$ # and run Credo in strict mode.
 $ mix tests
 ```
 

@@ -5,17 +5,18 @@ set -e
 previous_version="${1}"
 release_version="${2}"
 
-mix compile.nimble
 mix tests
 git add EXAMPLES.md
+git add lib/combinators.ex
 
 sed -i "s/$previous_version/$release_version/" README.md
 sed -i "s/$previous_version/$release_version/" mix.exs
+sed -i "s/unreleased/$release_version/" CHANGELOG.md
 git add mix.exs
 git add README.md
+git add CHANGELOG.md
 
-mix docs
-
+git commit
 git tag -a "$release_version" -m "Release version $release_version"
 git push origin "$release_version"
 

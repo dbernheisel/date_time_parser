@@ -1,11 +1,11 @@
 defmodule DateTimeParserTest.Recorder do
   @moduledoc "Record results from tests into a Markdown file"
   @external_resource "test/fixture/playground_header.md"
-  @examples_header File.read!(@external_resource)
 
   if Version.match?(System.version(), ">= 1.5.0") do
     use Agent
     @name {:global, :recorder}
+    @examples_header File.read!(@external_resource)
     @example_file "EXAMPLES.livemd"
 
     def start_link(initial_value \\ []) do

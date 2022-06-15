@@ -67,7 +67,7 @@ defmodule DateTimeParser.MixProject do
     |> add_if({:ex_doc, "~> 0.20", only: :dev, runtime: false}, ">= 1.7.0")
     |> add_if(
       {:nimble_parsec, "~> 1.0",
-       github: "dashbitco/nimble_parsec", only: :dev, override: true, runtime: false},
+       github: "dashbitco/nimble_parsec", only: [:dev, :test], override: true, runtime: false},
       ">= 1.6.0"
     )
   end
@@ -87,6 +87,7 @@ defmodule DateTimeParser.MixProject do
 
   defp tests() do
     []
+    |> add_if("compile --force --warnings-as-errors", !System.get_env("CI"))
     |> add_if("compile.nimble", !System.get_env("CI"))
     |> add_if("format --check-formatted", ">= 1.10.0")
     |> add_if("credo --strict", ">= 1.6.0")
