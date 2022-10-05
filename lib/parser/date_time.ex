@@ -59,9 +59,8 @@ defmodule DateTimeParser.Parser.DateTime do
     with true <- DateTimeParser.Parser.Date.parsed_date?(parsed_values),
          {:ok, ndt} <- to_naive_date_time(opts, parsed_values),
          {:ok, ndt} <- validate_day(ndt),
-         {:ok, dt} <- to_datetime(ndt, tokens),
-         {:ok, dt} <- maybe_convert_to_utc(dt, opts) do
-      {:ok, dt}
+         {:ok, dt} <- to_datetime(ndt, tokens) do
+      maybe_convert_to_utc(dt, opts)
     end
   end
 

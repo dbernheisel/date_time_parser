@@ -24,8 +24,7 @@ defmodule DateTimeParser.MixProject do
         profile: :bench
       ],
       deps: deps(),
-      description:
-        "Parse a string into DateTime, NaiveDateTime, Time, or Date struct."
+      description: "Parse a string into DateTime, NaiveDateTime, Time, or Date struct."
     ]
   end
 
@@ -54,7 +53,8 @@ defmodule DateTimeParser.MixProject do
       links: %{
         "GitHub" => "https://github.com/dbernheisel/date_time_parser",
         "Readme" => "https://github.com/dbernheisel/date_time_parser/blob/#{@version}/README.md",
-        "Changelog" => "https://github.com/dbernheisel/date_time_parser/blob/#{@version}/CHANGELOG.md"
+        "Changelog" =>
+          "https://github.com/dbernheisel/date_time_parser/blob/#{@version}/CHANGELOG.md"
       }
     ]
   end

@@ -37,9 +37,8 @@ defmodule DateTimeParser.Parser.Date do
       })
 
     with {:ok, date} <-
-           for_context(context, parsed_values, Keyword.get(opts, :assume_date, false)),
-         {:ok, date} <- validate_day(date) do
-      {:ok, date}
+           for_context(context, parsed_values, Keyword.get(opts, :assume_date, false)) do
+      validate_day(date)
     end
   end
 
