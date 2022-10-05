@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- Update GitHub Repo references
+
 ## 1.1.3
 
 - Stricter time parsing by requiring time separators. For example, `949` used to

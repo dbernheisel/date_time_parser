@@ -8,7 +8,7 @@
 DateTimeParser is a tokenizer for strings that attempts to parse into a
 DateTime, NaiveDateTime if timezone is not determined, Date, or Time.
 
-You're currently looking at the master branch. [Check out the docs for the latest
+You're currently looking at the main branch. [Check out the docs for the latest
 published version.](https://hexdocs.pm/date_time_parser)
 
 ## Documentation

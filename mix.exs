@@ -1,6 +1,6 @@
 defmodule DateTimeParser.MixProject do
   use Mix.Project
-  @version "1.1.3"
+  @version "1.1.4"
 
   def project do
     [
@@ -52,9 +52,9 @@ defmodule DateTimeParser.MixProject do
       maintainers: ["David Bernheisel"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/taxjar/date_time_parser",
-        "Readme" => "https://github.com/taxjar/date_time_parser/blob/#{@version}/README.md",
-        "Changelog" => "https://github.com/taxjar/date_time_parser/blob/#{@version}/CHANGELOG.md"
+        "GitHub" => "https://github.com/dbernheisel/date_time_parser",
+        "Readme" => "https://github.com/dbernheisel/date_time_parser/blob/#{@version}/README.md",
+        "Changelog" => "https://github.com/dbernheisel/date_time_parser/blob/#{@version}/CHANGELOG.md"
       }
     ]
   end
