@@ -69,11 +69,6 @@ jobs:
       with:
         path: deps
         key: ${{ runner.os }}-deps-${{ matrix.elixir_version }}
-    - uses: actions/cache@v1
-      name: "Cache Dialyzer PLTs"
-      with:
-        path: priv/plts
-        key: ${{ runner.os }}-plt-${{ matrix.elixir_version }}
     - name: Install Hex & Rebar
       run: |
         mix local.rebar --force
@@ -86,5 +81,3 @@ jobs:
       run: mix compile --force --warnings-as-errors
     - name: Test
       run: mix test
-    - name: Typespecs
-      run: mix typespecs
