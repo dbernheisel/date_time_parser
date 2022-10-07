@@ -1,5 +1,14 @@
 # Changelog
 
+## unreleased
+
+- Switch to pre-compiled combinators so that NimbleParsec is not needed during
+  compilation-- why have everyone else compile this when we can compile it
+  before publishing?
+- Update examples to be a Livebook
+- Fix serial parser matching on time
+- Fix `assume_date` option with time results from `parse` function.
+
 ## 1.1.4
 
 - Update GitHub Repo references

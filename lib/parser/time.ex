@@ -13,31 +13,28 @@ defmodule DateTimeParser.Parser.Time do
   @behaviour DateTimeParser.Parser
   @time_regex ~r|(?<time>\d{1,2}:\d{2}(?::\d{2})?(?:.*)?)|
 
-  import NimbleParsec
-  import DateTimeParser.Combinators.Time
+  alias DateTimeParser.Combinators
   import DateTimeParser.Formatters, only: [format_token: 2]
-
-  defparsecp(:do_parse, time())
 
   @impl DateTimeParser.Parser
   def preflight(parser), do: {:ok, parser}
 
   @impl DateTimeParser.Parser
   def parse(%{string: string} = parser) do
-    case string |> extract_time() |> do_parse() do
+    case string |> extract_time() |> Combinators.parse_time() do
       {:ok, tokens, _, _, _, _} -> from_tokens(parser, tokens)
       _ -> {:error, :failed_to_parse}
     end
   end
 
-  defp from_tokens(%{context: context}, tokens) do
+  defp from_tokens(%{context: context, opts: opts}, tokens) do
     case Time.new(
            format_token(tokens, :hour) || 0,
            format_token(tokens, :minute) || 0,
            format_token(tokens, :second) || 0,
            format_token(tokens, :microsecond) || {0, 0}
          ) do
-      {:ok, time} -> for_context(context, time)
+      {:ok, time} -> for_context(context, time, Keyword.get(opts, :assume_date, false))
       _ -> {:error, "Could not parse time"}
     end
   end
@@ -54,9 +51,11 @@ defmodule DateTimeParser.Parser.Time do
     end
   end
 
-  defp for_context(:time, time), do: {:ok, time}
-  defp for_context(:date, time), do: {:error, "Could not parse a date from #{inspect(time)}"}
+  defp for_context(:best, time, %Date{} = date), do: NaiveDateTime.new(date, time)
+  defp for_context(:best, time, _), do: {:ok, time}
+  defp for_context(:time, time, _), do: {:ok, time}
+  defp for_context(:date, time, _), do: {:error, "Could not parse a date from #{inspect(time)}"}
 
-  defp for_context(:datetime, time),
+  defp for_context(:datetime, time, _),
     do: {:error, "Could not parse a datetime from #{inspect(time)}"}
 end
