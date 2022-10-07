@@ -8,6 +8,9 @@
 - Update examples to be a Livebook
 - Fix serial parser matching on time
 - Fix `assume_date` option with time results from `parse` function.
+- Support Month-Year format; please note that this essentially requires a
+  fallback `assume_date` since there is not a data structure that only describes
+  Month and Year in Elixir.
 
 ## 1.1.4
 
