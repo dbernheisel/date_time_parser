@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## 1.1.5
 
 - Switch to pre-compiled combinators so that NimbleParsec is not needed during
   compilation-- why have everyone else compile this when we can compile it

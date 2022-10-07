@@ -6,7 +6,7 @@ previous_version="${1}"
 release_version="${2}"
 
 mix tests
-git add EXAMPLES.md
+git add EXAMPLES.livemd
 git add lib/combinators.ex
 
 sed -i "s/$previous_version/$release_version/" README.md
