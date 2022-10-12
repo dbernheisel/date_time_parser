@@ -8,7 +8,7 @@ defmodule DateTimeParser.MixProject do
       name: "DateTimeParser",
       version: @version,
       homepage_url: "https://hexdocs.pm/date_time_parser",
-      source_url: "https://github.com/taxjar/date_time_parser",
+      source_url: "https://github.com/dbernheisel/date_time_parser",
       elixir: ">= 1.4.0",
       # When on Elixir 1.7+, enable inline: true for nimble parsec
       elixirc_paths: elixirc_paths(Mix.env()),
