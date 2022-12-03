@@ -2,33 +2,39 @@ defmodule DateTimeParser.Combinators do
   @moduledoc false
   # credo:disable-for-this-file
 
-  @months_map %{
-    "january" => 1,
-    "february" => 2,
-    "march" => 3,
-    "april" => 4,
-    "may" => 5,
-    "june" => 6,
-    "july" => 7,
-    "august" => 8,
-    "september" => 9,
-    "october" => 10,
-    "november" => 11,
-    "december" => 12,
-    "jan" => 1,
-    "feb" => 2,
-    "mar" => 3,
-    "apr" => 4,
-    "jun" => 6,
-    "jul" => 7,
-    "aug" => 8,
-    "sept" => 9,
-    "sep" => 9,
-    "oct" => 10,
-    "nov" => 11,
-    "dec" => 12
-  }
+  @default_languages ["en"]
+  @supported_languages Application.compile_env(:date_time_parser, :languages, @default_languages)
 
+  @months [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]
+
+  append_months = fn lang, current_mapping ->
+    @months
+    |> Enum.with_index(1)
+    |> Enum.reduce(current_mapping, fn {base_month, index}, acc ->
+      month = Timex.Translator.translate(lang, "months", base_month)
+      month_abbr = Timex.Translator.translate(lang, "months_abbr", String.slice(base_month, 0..2))
+
+      acc
+      |> Map.put(String.downcase(month), index)
+      |> Map.put(String.downcase(month_abbr), index)
+    end)
+  end
+
+  @months_map_additions %{"sept" => 9}
+  @months_map Enum.reduce(@supported_languages, @months_map_additions, &append_months.(&1, &2))
   def to_integer(value) when is_binary(value), do: String.to_integer(value)
   def vocal_month_to_numeric_month(value), do: Map.get(@months_map, value)
 
@@ -175,33 +181,42 @@ defmodule DateTimeParser.Combinators do
   ## DATE
 
   @days_map %{
-    "sun" => "Sunday",
-    "mon" => "Monday",
-    "tues" => "Tuesday",
-    "tue" => "Tuesday",
-    "wed" => "Wednesday",
-    "thurs" => "Thursday",
-    "thur" => "Thursday",
-    "thu" => "Thursday",
-    "fri" => "Friday",
-    "sat" => "Saturday"
+    "Sun" => "Sunday",
+    "Mon" => "Monday",
+    "Tues" => "Tuesday",
+    "Tue" => "Tuesday",
+    "Wed" => "Wednesday",
+    "Thurs" => "Thursday",
+    "Thur" => "Thursday",
+    "Thu" => "Thursday",
+    "Fri" => "Friday",
+    "Sat" => "Saturday"
   }
+  process_days = fn day ->
+    day
+    |> Enum.uniq()
+    |> Enum.map(&String.downcase/1)
+    |> Enum.sort_by(&byte_size/1)
+    |> Enum.reverse()
+    |> Enum.map(&string/1)
+  end
 
-  @vocal_days_long @days_map
-                   |> Map.values()
-                   |> Enum.uniq()
-                   |> Enum.map(&String.downcase/1)
-                   |> Enum.sort_by(&byte_size/1)
-                   |> Enum.reverse()
-                   |> Enum.map(&string/1)
+  @vocal_days_long Enum.reduce(@supported_languages, [], fn lang, acc ->
+                     @days_map
+                     |> Map.values()
+                     |> Enum.map(&Timex.Translator.translate(lang, "weekdays", &1))
+                     |> then(&process_days.(&1))
+                     |> Kernel.++(acc)
+                   end)
 
-  @vocal_days_short @days_map
-                    |> Map.keys()
-                    |> Enum.uniq()
-                    |> Enum.map(&String.downcase/1)
-                    |> Enum.sort_by(&byte_size/1)
-                    |> Enum.reverse()
-                    |> Enum.map(&string/1)
+  @vocal_days_short Enum.reduce(@supported_languages, [], fn lang, acc ->
+                      @days_map
+                      |> Map.keys()
+                      |> Enum.map(&Timex.Translator.translate(lang, "weekdays", &1))
+                      |> then(&process_days.(&1))
+                      |> Kernel.++(acc)
+                    end)
+
   @date_separator [",", ".", "/", "-", " "]
 
   year4 =
