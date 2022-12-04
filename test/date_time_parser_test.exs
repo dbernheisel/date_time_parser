@@ -236,26 +236,6 @@ defmodule DateTimeParserTest do
     test_parsing("jul-10-18", "2018-07-10")
   end
 
-  # describe "translated" do
-  #  test_parsing(" 01 Lut 2013", "2013-02-01")
-  #  test_parsing(" 03 Sty 2013 10:15:26 -0800", "2013-01-03T18:15:26Z", to_utc: true)
-  #  test_parsing(" 11 Lut 2013", "2013-02-11")
-  #  test_parsing(" 11 Sty 2013 13:26:55 -0800", "2013-01-11T21:26:55Z", to_utc: true)
-  #  test_parsing(" 24 Wrz 2013", "2013-09-24")
-  #  test_parsing("01-Lut-18", "2018-02-01")
-  #  test_parsing("01-Lip", "2019-07-01", assume_date: ~D[2019-01-05])
-  #  test_parsing("01-Lip-18", "2018-07-01")
-  #  test_parsing("Sobota 01 Styczeń 2017 09:22:46 AM", "2017-01-01T09:22:46")
-  #  test_parsing("Sb 01 Sty 2017 10:11:02 PM", "2017-01-01T22:11:02")
-  #  test_parsing("Czw Sie 09 2018 17:13:43 GMT+0000 (UTC)", "2018-08-09T17:13:43Z")
-  #  test_parsing("Czw Lut 08 00:24:33 2018", "2018-02-08T00:24:33")
-  #  test_parsing("Czw Lip  5 12:19:56 2018", "2018-07-05T12:19:56")
-  #  test_parsing("Wt Lip 31 06:44:39 2018", "2018-07-31T06:44:39")
-  #  test_parsing("Czwartek 30 Sierpień 2018 11:31:18 AM", "2018-08-30T11:31:18")
-  #  test_parsing("Wtorek 11 Lipiec 2017 1:43:46 PM", "2017-07-11T13:43:46")
-  #  test_parsing(~s|"Wtorek, Listopad 29, 2016"|, "2016-11-29")
-  # end
-
   describe "parse_datetime/1 - serial" do
     test_datetime_parsing("41261.6013888889", ~N[2012-12-18T14:26:00])
     test_datetime_parsing("-45103.1454398148", ~N[1776-07-04T20:30:34])
@@ -744,4 +724,32 @@ defmodule DateTimeParserTest do
       test_date_error("2017-#{@month}-31", ~s|Could not parse "2017-#{@month}-31"|)
     end
   end
+
+  # describe "translated" do
+  #   setup do
+  #     Application.put_env(:date_time_parser, :cldr_backend, DateTime.Cldr)
+
+  #     on_exit(fn ->
+  #       Application.delete_env(:date_time_parser, :cldr_backend)
+  #     end)
+  #   end
+
+  #   test_parsing(" 01 Lut 2013", "2013-02-01")
+  #   test_parsing(" 03 Sty 2013 10:15:26 -0800", "2013-01-03T18:15:26Z", to_utc: true)
+  #   test_parsing(" 11 Lut 2013", "2013-02-11")
+  #   test_parsing(" 11 Sty 2013 13:26:55 -0800", "2013-01-11T21:26:55Z", to_utc: true)
+  #   test_parsing(" 24 Wrz 2013", "2013-09-24")
+  #   test_parsing("01-Lut-18", "2018-02-01")
+  #   test_parsing("01-Lip", "2019-07-01", assume_date: ~D[2019-01-05])
+  #   test_parsing("01-Lip-18", "2018-07-01")
+  #   test_parsing("Sobota 01 Styczeń 2017 09:22:46 AM", "2017-01-01T09:22:46")
+  #   test_parsing("Sob 01 Sty 2017 10:11:02 PM", "2017-01-01T22:11:02")
+  #   test_parsing("Czw Sie 09 2018 17:13:43 GMT+0000 (UTC)", "2018-08-09T17:13:43Z")
+  #   test_parsing("Czw Lut 08 00:24:33 2018", "2018-02-08T00:24:33")
+  #   test_parsing("Czw Lip  5 12:19:56 2018", "2018-07-05T12:19:56")
+  #   test_parsing("Wto Lip 31 06:44:39 2018", "2018-07-31T06:44:39")
+  #   test_parsing("Czwartek 30 Sierpień 2018 11:31:18 AM", "2018-08-30T11:31:18")
+  #   test_parsing("Wtorek 11 Lipiec 2017 1:43:46 PM", "2017-07-11T13:43:46")
+  #   test_parsing(~s|"Wtorek, Listopad 29, 2016"|, "2016-11-29")
+  # end
 end

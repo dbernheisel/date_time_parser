@@ -58,7 +58,12 @@ defmodule DateTimeParser.MixProject do
   end
 
   defp deps() do
-    [{:exprof, "~> 0.2.0", only: :bench}]
+    [
+      {:exprof, "~> 0.2.0", only: :bench},
+      {:jason, "~> 1.4.0"},
+      {:ex_cldr_dates_times, "~> 2.0", only: [:dev, :test, :bench]},
+      {:ex_cldr_calendars, "~> 1.17", only: [:dev, :test, :bench]}
+    ]
     |> add_if({:timex, ">= 3.2.1 and <= 3.7.2"}, ">= 1.6.0")
     |> add_if({:timex, "< 3.2.1"}, "< 1.6.0")
     |> add_if({:gettext, "<= 0.16.1"}, "< 1.6.0")

@@ -2,39 +2,65 @@ defmodule DateTimeParser.Combinators do
   @moduledoc false
   # credo:disable-for-this-file
 
-  @default_languages ["en"]
-  @supported_languages Application.compile_env(:date_time_parser, :languages, @default_languages)
+  # Application.put_env(:date_time_parser, :cldr_backend, DateTimeParser.Cldr)
+  @cldr_backend Application.compile_env(:date_time_parser, :cldr_backend)
+  if Code.ensure_loaded?(@cldr_backend) and
+       Code.ensure_loaded?(Cldr.DateTime) and
+       Code.ensure_loaded?(Cldr.Calendar) do
+    @cldr_month_format_wide 4
+    @cldr_month_format_abbr 3
+    supported_locales = @cldr_backend.known_locale_names()
 
-  @months [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ]
+    @months_map (for month_numeric <- 1..12,
+                     date = Date.new!(2022, month_numeric, 1),
+                     lang <- supported_locales,
+                     lang = to_string(lang),
+                     cldr_format <- [@cldr_month_format_wide, @cldr_month_format_abbr],
+                     reduce: Map.new() do
+                   acc ->
+                     month_str =
+                       date
+                       |> Cldr.DateTime.Formatter.standalone_month(
+                         cldr_format,
+                         lang,
+                         @cldr_backend
+                       )
+                       |> String.downcase()
 
-  append_months = fn lang, current_mapping ->
-    @months
-    |> Enum.with_index(1)
-    |> Enum.reduce(current_mapping, fn {base_month, index}, acc ->
-      month = Timex.Translator.translate(lang, "months", base_month)
-      month_abbr = Timex.Translator.translate(lang, "months_abbr", String.slice(base_month, 0..2))
+                     Map.put(acc, month_str, month_numeric)
+                 end)
 
-      acc
-      |> Map.put(String.downcase(month), index)
-      |> Map.put(String.downcase(month_abbr), index)
-    end)
+    @cldr_day_format_wide 4
+    @cldr_day_format_abbr 1
+    @cldr_day_format_short 6
+    @vocal_days (for cldr_format <- [
+                       @cldr_day_format_wide,
+                       @cldr_day_format_abbr,
+                       @cldr_day_format_short
+                     ],
+                     lang <- supported_locales,
+                     lang = to_string(lang),
+                     day_numeric <- 1..7,
+                     date = Date.new!(2022, 1, day_numeric),
+                     uniq: true do
+                   date
+                   |> Cldr.DateTime.Formatter.day_name(cldr_format, lang, @cldr_backend)
+                   |> String.downcase()
+                 end)
+  else
+    @vocal_days ~w(sunday monday tuesday wednesday thursday friday saturday) ++
+                  ~w(sun mon tue tues wed thu thur thurs fri sat)
+    @months_map ~w(january february march april may june july august september october november december)
+                |> Enum.with_index(1)
+                |> Enum.reduce(Map.new(), fn {base_month, index}, acc ->
+                  month_abbr = String.slice(base_month, 0..2)
+
+                  acc
+                  |> Map.put(base_month, index)
+                  |> Map.put(month_abbr, index)
+                end)
   end
 
-  @months_map_additions %{"sept" => 9}
-  @months_map Enum.reduce(@supported_languages, @months_map_additions, &append_months.(&1, &2))
   def to_integer(value) when is_binary(value), do: String.to_integer(value)
   def vocal_month_to_numeric_month(value), do: Map.get(@months_map, value)
 
@@ -179,44 +205,6 @@ defmodule DateTimeParser.Combinators do
   defparsec(:parse_time, time)
 
   ## DATE
-
-  @days_map %{
-    "Sun" => "Sunday",
-    "Mon" => "Monday",
-    "Tues" => "Tuesday",
-    "Tue" => "Tuesday",
-    "Wed" => "Wednesday",
-    "Thurs" => "Thursday",
-    "Thur" => "Thursday",
-    "Thu" => "Thursday",
-    "Fri" => "Friday",
-    "Sat" => "Saturday"
-  }
-  process_days = fn day ->
-    day
-    |> Enum.uniq()
-    |> Enum.map(&String.downcase/1)
-    |> Enum.sort_by(&byte_size/1)
-    |> Enum.reverse()
-    |> Enum.map(&string/1)
-  end
-
-  @vocal_days_long Enum.reduce(@supported_languages, [], fn lang, acc ->
-                     @days_map
-                     |> Map.values()
-                     |> Enum.map(&Timex.Translator.translate(lang, "weekdays", &1))
-                     |> then(&process_days.(&1))
-                     |> Kernel.++(acc)
-                   end)
-
-  @vocal_days_short Enum.reduce(@supported_languages, [], fn lang, acc ->
-                      @days_map
-                      |> Map.keys()
-                      |> Enum.map(&Timex.Translator.translate(lang, "weekdays", &1))
-                      |> then(&process_days.(&1))
-                      |> Kernel.++(acc)
-                    end)
-
   @date_separator [",", ".", "/", "-", " "]
 
   year4 =
@@ -362,7 +350,8 @@ defmodule DateTimeParser.Combinators do
     ])
 
   vocal_day =
-    (@vocal_days_long ++ @vocal_days_short)
+    @vocal_days
+    |> Enum.map(&string/1)
     |> choice()
     |> unwrap_and_tag(:vocal_day)
     |> label("vocal day spelled out")
