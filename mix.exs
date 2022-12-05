@@ -62,6 +62,7 @@ defmodule DateTimeParser.MixProject do
     |> add_if({:timex, ">= 3.2.1 and <= 3.7.2"}, ">= 1.6.0")
     |> add_if({:timex, "< 3.2.1"}, "< 1.6.0")
     |> add_if({:gettext, "<= 0.16.1"}, "< 1.6.0")
+    |> add_if({:kday, "~> 1.0"}, ">= 1.11.0")
     |> add_if({:benchee, "~> 1.0", only: [:bench], runtime: false}, ">= 1.6.0")
     |> add_if({:credo, "~> 1.1", only: [:dev, :test], runtime: false}, ">= 1.5.0")
     |> add_if({:ex_doc, "~> 0.20", only: :dev, runtime: false}, ">= 1.7.0")
