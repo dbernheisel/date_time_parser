@@ -2,7 +2,6 @@ defmodule DateTimeParser.Combinators do
   @moduledoc false
   # credo:disable-for-this-file
 
-  # Application.put_env(:date_time_parser, :cldr_backend, DateTimeParser.Cldr)
   @cldr_backend Application.compile_env(:date_time_parser, :cldr_backend)
   if Code.ensure_loaded?(@cldr_backend) and
        Code.ensure_loaded?(Cldr.DateTime) and
