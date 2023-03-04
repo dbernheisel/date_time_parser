@@ -111,14 +111,14 @@ iex> DateTimeParser.parse_datetime(~s|"Mar 28, 2018 7:39:53 AM PDT"|, to_utc: tr
 
 iex> {:ok, datetime} = DateTimeParser.parse_datetime(~s|"Mar 1, 2018 7:39:53 AM PST"|)
 iex> datetime
-#DateTime<2018-03-01 07:39:53-08:00 PST PST8PDT>
+#DateTime<2018-03-01 07:39:53-08:00 PST America/Los_Angeles>
 
 iex> DateTimeParser.parse_datetime(~s|"Mar 1, 2018 7:39:53 AM PST"|, to_utc: true)
 {:ok, DateTime.from_naive!(~N[2018-03-01T15:39:53Z], "Etc/UTC")}
 
 iex> {:ok, datetime} = DateTimeParser.parse_datetime(~s|"Mar 28, 2018 7:39:53 AM PDT"|)
 iex> datetime
-#DateTime<2018-03-28 07:39:53-07:00 PDT PST8PDT>
+#DateTime<2018-03-28 07:39:53-07:00 PDT America/Los_Angeles>
 
 iex> DateTimeParser.parse_time("10:13pm")
 {:ok, ~T[22:13:00]}
@@ -147,6 +147,9 @@ end
 
 ## Configuration
 
+You must have a timezone database configured if you want parsing to consider
+timezones. See [tz](https://github.com/mathieuprog/tz) or [tzdata](https://github.com/lau/tzdata).
+
 ```elixir
 # This is the default config
 alias DateTimeParser.Parser
@@ -154,6 +157,9 @@ config :date_time_parser, parsers: [Parser.Epoch, Parser.Serial, Parser.Tokenize
 
 # To enable only specific parsers, include them in the :parsers key.
 config :date_time_parser, parsers: [Parser.Tokenizer]
+
+# Adding the timezone database from Tz
+config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
 # Or in runtime, pass in the parsers in the function.
 DateTimeParser.parse(mystring, parsers: [Parser.Tokenizer])

@@ -16,12 +16,14 @@ defmodule DateTimeParser.TimezoneParserTest do
 
       {[zone1, zone2, zone3, zone4, zone5, zone6] = zones, []} = TimezoneParser.parse(sample)
       assert Enum.all?(zones, &(&1.name == "America/New_York"))
-      assert zone1.std_offset == -17_762
+      assert zone1.utc_offset_sec == -17_762
+      assert zone1.utc_offset_hrs == "-0456"
       assert zone1.abbreviations == ["LMT"]
       assert zone1.from == nil
       assert zone1.until == ~U[1883-11-18 17:00:00Z]
 
-      assert Enum.all?([zone2, zone3, zone4, zone5, zone6], &(&1.std_offset == -18_000))
+      assert Enum.all?([zone2, zone3, zone4, zone5, zone6], &(&1.utc_offset_sec == -18_000))
+      assert Enum.all?([zone2, zone3, zone4, zone5, zone6], &(&1.utc_offset_hrs == "-0500"))
       assert Enum.all?([zone2, zone3, zone4, zone5, zone6], &(&1.abbreviations == []))
       assert zone2.from == ~U[1883-11-18 17:00:00Z]
       assert zone2.until == ~N[1920-01-01 00:00:00]

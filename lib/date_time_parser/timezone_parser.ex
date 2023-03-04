@@ -15,12 +15,53 @@ defmodule DateTimeParser.TimezoneParser do
 
   defmodule Zone do
     @moduledoc false
-    defstruct [:name, :std_offset, :from, :until, abbreviations: [], aliases: []]
+    defstruct [
+      :name,
+      :utc_offset_sec,
+      :utc_offset_hrs,
+      :from,
+      :until,
+      abbreviations: [],
+      aliases: []
+    ]
   end
 
   defmodule Rule do
     @moduledoc false
     defstruct [:name, :from, :until, :save, :letter]
+  end
+
+  defimpl Inspect, for: Zone do
+    import Inspect.Algebra
+
+    def inspect(zone, _opts) do
+      concat([
+        "#<TimeZone ",
+        zone.name,
+        " (",
+        zone.utc_offset_hrs,
+        ")",
+        ">"
+      ])
+    end
+  end
+
+  defimpl Inspect, for: Rule do
+    import Inspect.Algebra
+
+    def inspect(rule, opts) do
+      concat([
+        "#<TimeZoneRule ",
+        rule.name,
+        " (",
+        to_doc(rule.from, opts),
+        " - ",
+        to_doc(rule.until, opts),
+        ") ",
+        rule.save,
+        ">"
+      ])
+    end
   end
 
   def parse(spec \\ read_file()) do
@@ -50,7 +91,7 @@ defmodule DateTimeParser.TimezoneParser do
   @max ~N[9999-12-31T23:59:59]
   def parse(["Zone" <> line | rest], meta) do
     line = remove_comments(line)
-    [name, stdoff, rule, format | until] = String.split(line, ~r/\s/, trim: true, parts: 5)
+    [name, utcoff, rule, format | until] = String.split(line, ~r/\s/, trim: true, parts: 5)
 
     until =
       if until && Enum.any?(until), do: String.split(clean(List.first(until)), ~r/\s/, trim: true)
@@ -68,7 +109,8 @@ defmodule DateTimeParser.TimezoneParser do
 
     zone = %Zone{
       name: clean(name),
-      std_offset: stdoff |> clean() |> to_seconds(),
+      utc_offset_sec: utcoff |> clean() |> to_time() |> to_seconds_after_midnight(),
+      utc_offset_hrs: utcoff |> clean() |> to_time() |> to_offset(),
       abbreviations:
         zone_rules
         |> Enum.filter(& &1.letter)
@@ -108,7 +150,7 @@ defmodule DateTimeParser.TimezoneParser do
       name: name,
       from: from_ndt,
       until: to_ndt,
-      save: to_seconds(clean(save)),
+      save: save |> clean() |> to_time() |> to_seconds_after_midnight(),
       letter: clean(letter)
     }
 
@@ -282,25 +324,36 @@ defmodule DateTimeParser.TimezoneParser do
     defp day_of_week(unquote(d)), do: unquote(n)
   end
 
-  defp to_seconds(nil), do: nil
-  defp to_seconds(0), do: 0
-  defp to_seconds(time) when byte_size(time) == 1, do: to_seconds("0" <> time <> ":00:00")
-  defp to_seconds("-" <> time) when byte_size(time) == 1, do: to_seconds("-0" <> time <> ":00:00")
-  defp to_seconds(time) when byte_size(time) == 2, do: to_seconds(time <> ":00:00")
-  defp to_seconds("+" <> time) when byte_size(time) == 2, do: to_seconds(time <> ":00:00")
-  defp to_seconds("-" <> time) when byte_size(time) == 2, do: to_seconds("-" <> time <> ":00:00")
-  defp to_seconds(time) when byte_size(time) in [4, 7], do: to_seconds("0" <> time)
-  defp to_seconds(time) when byte_size(time) == 5, do: to_seconds(time <> ":00")
-  defp to_seconds("-" <> time) when byte_size(time) == 5, do: to_seconds("-" <> time <> ":00")
-  defp to_seconds("-" <> time) when byte_size(time) == 7, do: to_seconds("-0" <> time)
+  defp to_time(nil), do: nil
+  defp to_time(0), do: 0
+  defp to_time(time) when byte_size(time) == 1, do: to_time("0" <> time <> ":00:00")
+  defp to_time("-" <> time) when byte_size(time) == 1, do: to_time("-0" <> time <> ":00:00")
+  defp to_time(time) when byte_size(time) == 2, do: to_time(time <> ":00:00")
+  defp to_time("+" <> time) when byte_size(time) == 2, do: to_time(time <> ":00:00")
+  defp to_time("-" <> time) when byte_size(time) == 2, do: to_time("-" <> time <> ":00:00")
+  defp to_time(time) when byte_size(time) in [4, 7], do: to_time("0" <> time)
+  defp to_time(time) when byte_size(time) == 5, do: to_time(time <> ":00")
+  defp to_time("-" <> time) when byte_size(time) == 5, do: to_time("-" <> time <> ":00")
+  defp to_time("-" <> time) when byte_size(time) == 7, do: to_time("-0" <> time)
+  defp to_time("-" <> time) when byte_size(time) == 8, do: {"-", Time.from_iso8601!(time)}
+  defp to_time(time) when byte_size(time) == 8, do: {"+", Time.from_iso8601!(time)}
 
-  defp to_seconds("-" <> time) when byte_size(time) == 8 do
-    {seconds, _} = time |> Time.from_iso8601!() |> Time.to_seconds_after_midnight()
+  defp to_offset({sign, time}) do
+    [
+      sign,
+      String.pad_leading("#{time.hour}", 2, "0"),
+      String.pad_leading("#{time.minute}", 2, "0")
+    ]
+    |> Enum.join()
+  end
+
+  defp to_seconds_after_midnight({"-", time}) do
+    {seconds, _} = Time.to_seconds_after_midnight(time)
     -seconds
   end
 
-  defp to_seconds(time) when byte_size(time) == 8 do
-    {seconds, _} = time |> Time.from_iso8601!() |> Time.to_seconds_after_midnight()
+  defp to_seconds_after_midnight({"+", time}) do
+    {seconds, _} = Time.to_seconds_after_midnight(time)
     seconds
   end
 

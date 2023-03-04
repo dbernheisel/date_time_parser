@@ -38,19 +38,10 @@ defmodule DateTimeParser.Combinators do
   ### TIMEZONE
   @time_separator ":"
   @utc ~w(utc gmt z)
-  @eastern ~w(eastern est edt et)
-  @pacific ~w(pacific pst pdt pt)
-  @central ~w(central cst cdt ct)
-  @mountain ~w(mountain mst mdt mt)
-  @alaska ~w(alaska akst akdt akt)
-  @hawaii ~w(hawaii hast hadt hat hst)
-  @timezone_abbreviations @utc ++
-                            @eastern ++
-                            @pacific ++
-                            @central ++
-                            @mountain ++
-                            @alaska ++
-                            @hawaii
+  @timezone_abbreviations Enum.map(
+                            DateTimeParser.TimezoneAbbreviations.all_abbreviations(),
+                            &String.downcase/1
+                          )
 
   time_separator = string(@time_separator)
 
@@ -170,7 +161,7 @@ defmodule DateTimeParser.Combinators do
     |> concat(space_separator |> optional() |> ignore())
     |> concat(am_pm |> optional())
 
-  defparsec(:parse_time, time)
+  defparsec(:parse_time, time, inline: true)
 
   ## DATE
 

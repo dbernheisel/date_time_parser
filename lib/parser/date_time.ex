@@ -5,6 +5,7 @@ defmodule DateTimeParser.Parser.DateTime do
   """
   @behaviour DateTimeParser.Parser
   alias DateTimeParser.Combinators
+  alias DateTimeParser.TimezoneAbbreviations
   import DateTimeParser.Formatters, only: [format_token: 2, clean: 1]
 
   @impl DateTimeParser.Parser
@@ -34,7 +35,7 @@ defmodule DateTimeParser.Parser.DateTime do
     with true <- DateTimeParser.Parser.Date.parsed_date?(parsed_values),
          {:ok, ndt} <- to_naive_date_time(opts, parsed_values),
          {:ok, ndt} <- validate_day(ndt),
-         {:ok, dt} <- to_datetime(ndt, tokens) do
+         {:ok, dt} <- to_datetime(opts, ndt, tokens) do
       maybe_convert_to_utc(dt, opts)
     end
   end
@@ -43,17 +44,12 @@ defmodule DateTimeParser.Parser.DateTime do
   def validate_day(ndt), do: DateTimeParser.Parser.Date.validate_day(ndt)
 
   @doc false
-  def from_naive_datetime_and_tokens(naive_datetime, tokens) do
+  def from_naive_datetime_and_tokens(opts, naive_datetime, tokens) do
     with timezone when not is_nil(timezone) <- tokens[:zone_abbr] || tokens[:utc_offset],
-         %{} = timezone_info <- timezone_from_tokens(tokens, naive_datetime) do
+         {:ok, %{} = timezone_info} <- timezone_from_tokens(tokens, naive_datetime, opts) do
       naive_datetime
       |> DateTime.from_naive!("Etc/UTC")
-      |> Map.merge(%{
-        std_offset: timezone_info.offset_std,
-        utc_offset: timezone_info.offset_utc,
-        zone_abbr: timezone_info.abbreviation,
-        time_zone: timezone_info.full_name
-      })
+      |> Map.merge(timezone_info)
     else
       _ -> naive_datetime
     end
@@ -79,11 +75,9 @@ defmodule DateTimeParser.Parser.DateTime do
 
   def maybe_convert_to_utc(%DateTime{} = datetime, opts) do
     if Keyword.get(opts, :to_utc, false) do
-      # empty TimezoneInfo defaults to UTC. Doing this to avoid Dialyzer errors
-      # since :utc is not in the typespec
-      case Timex.Timezone.convert(datetime, %Timex.TimezoneInfo{}) do
+      case DateTime.shift_zone(datetime, "Etc/UTC") do
+        {:ok, udt} -> {:ok, udt}
         {:error, _} = error -> error
-        converted_datetime -> {:ok, converted_datetime}
       end
     else
       {:ok, datetime}
@@ -127,19 +121,41 @@ defmodule DateTimeParser.Parser.DateTime do
     )
   end
 
-  defp timezone_from_tokens(tokens, naive_datetime) do
-    with zone <- format_token(tokens, :zone_abbr),
-         offset <- format_token(tokens, :utc_offset),
-         true <- Enum.any?([zone, offset]) do
-      Timex.Timezone.get(offset || zone, naive_datetime)
+  defp timezone_from_tokens(tokens, naive_datetime, opts) do
+    zone = format_token(tokens, :zone_abbr)
+    offset = format_token(tokens, :utc_offset)
+
+    timezone_from_zone(zone, naive_datetime, opts) ||
+      timezone_from_offset(offset, naive_datetime, opts) ||
+      naive_datetime
+  end
+
+  defp timezone_from_zone(nil, _naive_datetime, _opts), do: nil
+
+  defp timezone_from_zone(abbr, naive_datetime, opts) do
+    with %{name: name} <-
+           TimezoneAbbreviations.zone_by_abbreviation(
+             abbr,
+             Keyword.put(opts, :at, naive_datetime)
+           ) do
+      DateTime.from_naive(naive_datetime, name)
     end
   end
 
-  defp to_datetime(%DateTime{} = datetime, _tokens), do: {:ok, datetime}
+  defp timezone_from_offset(nil, _naive_datetime, _opts), do: nil
 
-  defp to_datetime(%NaiveDateTime{} = ndt, tokens) do
-    {:ok, from_naive_datetime_and_tokens(ndt, tokens)}
+  defp timezone_from_offset(offset, naive_datetime, opts) do
+    with %{name: name} <-
+           TimezoneAbbreviations.zone_by_offset(offset, Keyword.put(opts, :at, naive_datetime)) do
+      DateTime.from_naive(naive_datetime, name)
+    end
   end
 
-  defp to_datetime(_error, _), do: :error
+  defp to_datetime(_opts, %DateTime{} = datetime, _tokens), do: {:ok, datetime}
+
+  defp to_datetime(opts, %NaiveDateTime{} = ndt, tokens) do
+    {:ok, from_naive_datetime_and_tokens(opts, ndt, tokens)}
+  end
+
+  defp to_datetime(_opts, _error, _tokens), do: :error
 end
