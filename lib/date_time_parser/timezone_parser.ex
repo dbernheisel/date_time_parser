@@ -106,16 +106,17 @@ defmodule DateTimeParser.TimezoneParser do
     rule_name = clean(rule)
     zone_rules = find_rules(meta[:rules], rule_name, from, until)
     format = clean(format)
+    utc_time = utcoff |> clean() |> to_time()
 
     zone = %Zone{
       name: clean(name),
-      utc_offset_sec: utcoff |> clean() |> to_time() |> to_seconds_after_midnight(),
-      utc_offset_hrs: utcoff |> clean() |> to_time() |> to_offset(),
+      utc_offset_sec: to_seconds_after_midnight(utc_time),
+      utc_offset_hrs: to_offset(utc_time),
       abbreviations:
         zone_rules
         |> Enum.filter(& &1.letter)
         |> Enum.map(&String.replace(format, "%s", &1.letter))
-        |> then(&if String.contains?(format, "%s"), do: &1, else: Enum.concat(&1, [format]))
+        |> add_root_abbreviation(format)
         |> Enum.uniq(),
       from: if(from != @min, do: from),
       until: if(until != @max, do: until)
@@ -185,6 +186,14 @@ defmodule DateTimeParser.TimezoneParser do
 
       %Zone{} = last_zone = meta[:last] ->
         parse(["Zone\t#{last_zone.name}\t" <> line | rest], meta)
+    end
+  end
+
+  defp add_root_abbreviation(abbrevations, format) do
+    if String.contains?(format, "%s") do
+      abbrevations
+    else
+      Enum.concat(abbrevations, [format])
     end
   end
 
