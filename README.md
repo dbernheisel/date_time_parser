@@ -265,14 +265,14 @@ you also must configure Elixir to use it.
 For example:
 
 ```elixir
-iex> Mix.install([{:date_time_parser, path: "."}, :tz])
-:ok
-iex> DateTimeParser.parse("2020-02-02 10:00:00 PST")
-{:ok, ~N[2020-02-02 10:00:00]}
-iex> Application.put_env(:elixir, :time_zone_database, Tz.TimeZoneDatabase)
-:ok
-iex> DateTimeParser.parse("2020-02-02 10:00:00 PST")
-{:ok, #DateTime<2020-02-02 10:00:00-08:00 PST America/Los_Angeles>}
+Mix.install([{:date_time_parser, path: "."}, :tz])
+# :ok
+DateTimeParser.parse("2020-02-02 10:00:00 PST")
+# {:ok, ~N[2020-02-02 10:00:00]}
+Application.put_env(:elixir, :time_zone_database, Tz.TimeZoneDatabase)
+# :ok
+DateTimeParser.parse("2020-02-02 10:00:00 PST")
+# {:ok, #DateTime<2020-02-02 10:00:00-08:00 PST America/Los_Angeles>}
 ```
 
 or in a Mix project:
