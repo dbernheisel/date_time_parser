@@ -254,6 +254,46 @@ DateTimeParser.parse("boomshakalaka:11:11", parsers: [MyParser])
 
 ```
 
+## Why aren't timezones recognized?
+
+You might not have a timezone database configured.
+
+You may configure one by using [tz](https://github.com/mathieuprog/tz) or
+[tzdata](https://github.com/lau/tzdata). Not only should you install it, but
+you also must configure Elixir to use it.
+
+For example:
+
+```elixir
+iex> Mix.install([{:date_time_parser, path: "."}, :tz])
+:ok
+iex> DateTimeParser.parse("2020-02-02 10:00:00 PST")
+{:ok, ~N[2020-02-02 10:00:00]}
+iex> Application.put_env(:elixir, :time_zone_database, Tz.TimeZoneDatabase)
+:ok
+iex> DateTimeParser.parse("2020-02-02 10:00:00 PST")
+{:ok, #DateTime<2020-02-02 10:00:00-08:00 PST America/Los_Angeles>}
+```
+
+or in a Mix project:
+
+```elixir
+# in mix.exs
+defp deps do
+  [
+    {:date_time_parser, "1.2"},
+    {:tz, "~> 0.24"},
+  ]
+end
+
+# in config/config.exs
+config :elixir, :time_zone_database, Tz.TimeZoneDatabase
+
+# then in code
+DateTimeParser.parse("2020-02-02 10:00:00 PST")
+#> {:ok, #DateTime<2020-02-02 10:00:00-08:00 PST America/Los_Angeles>}
+```
+
 ## Should I use this library?
 
 Only as a last resort. Parsing dates from strings is educated guessing at best.
