@@ -59,26 +59,27 @@ defmodule DateTimeParser.TimezoneParserTest do
       Rule	NYC	1955	1966	-	Oct	lastSun	2:00	0	S
       """
 
-      {[], [rule1, rule2, rule3 | _rest]} = TimezoneParser.parse(sample)
+      {[], rules} = TimezoneParser.parse(sample)
+      [rule1, rule2, rule3 | _] = rules |> Enum.sort_by(&{&1.name, &1.from})
 
-      # Rule	NYC	1920	only	-	Mar	lastSun	2:00	1:00	D
+      # Rule	NYC	1921	1966	-	Apr	lastSun	2:00	1:00	D
       assert rule1.name == "NYC"
-      assert rule1.from == ~N[1920-03-28 02:00:00]
-      assert rule1.until == ~N[1920-03-28 02:00:00]
+      assert rule1.from == ~N[1921-04-24 02:00:00]
+      assert rule1.until == ~N[1966-04-24 02:00:00]
       assert rule1.save == 3600
       assert rule1.letter == "D"
 
-      # Rule	NYC	1920	only	-	Oct	lastSun	2:00	0	S
+      # Rule	NYC	1921	1954	-	Sep	lastSun	2:00	0	S
       assert rule2.name == "NYC"
-      assert rule2.from == ~N[1920-10-31 02:00:00]
-      assert rule2.until == ~N[1920-10-31 02:00:00]
+      assert rule2.from == ~N[1921-09-25 02:00:00]
+      assert rule2.until == ~N[1954-09-26 02:00:00]
       assert rule2.save == 0
       assert rule2.letter == "S"
 
-      # Rule	NYC	1921	1966	-	Apr	lastSun	2:00	1:00	D
+      # Rule	NYC	1920	only	-	Mar	lastSun	2:00	1:00	D
       assert rule3.name == "NYC"
-      assert rule3.from == ~N[1921-04-24 02:00:00]
-      assert rule3.until == ~N[1966-04-24 02:00:00]
+      assert rule3.from == ~N[1920-03-28 02:00:00]
+      assert rule3.until == ~N[1920-03-28 02:00:00]
       assert rule3.save == 3600
       assert rule3.letter == "D"
     end
