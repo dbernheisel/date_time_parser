@@ -262,10 +262,10 @@ You may configure one by using [tz](https://github.com/mathieuprog/tz) or
 [tzdata](https://github.com/lau/tzdata). Not only should you install it, but
 you also must configure Elixir to use it.
 
-For example:
+For example, in a script:
 
 ```elixir
-Mix.install([{:date_time_parser, path: "."}, :tz])
+Mix.install([:date_time_parser, :tz])
 # :ok
 DateTimeParser.parse("2020-02-02 10:00:00 PST")
 # {:ok, ~N[2020-02-02 10:00:00]}
