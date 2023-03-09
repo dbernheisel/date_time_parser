@@ -37,7 +37,7 @@ defmodule DateTimeParser.Combinators do
 
   ### TIMEZONE
   @time_separator ":"
-  @utc ~w[utc gmt z]
+  @utc ~w[utc gmt zulu z]
   @timezone_abbreviations DateTimeParser.TimezoneAbbreviations.all_abbreviations()
                           |> Enum.map(&String.downcase/1)
                           |> Enum.sort_by(&{byte_size(&1), &1}, :desc)
@@ -172,6 +172,7 @@ defmodule DateTimeParser.Combinators do
     "tues" => "Tuesday",
     "tue" => "Tuesday",
     "wed" => "Wednesday",
+    "weds" => "Wednesday",
     "thurs" => "Thursday",
     "thur" => "Thursday",
     "thu" => "Thursday",
