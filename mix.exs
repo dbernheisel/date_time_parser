@@ -9,8 +9,7 @@ defmodule DateTimeParser.MixProject do
       version: @version,
       homepage_url: "https://hexdocs.pm/date_time_parser",
       source_url: "https://github.com/dbernheisel/date_time_parser",
-      elixir: ">= 1.4.0",
-      # When on Elixir 1.7+, enable inline: true for nimble parsec
+      elixir: ">= 1.11.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       aliases: aliases(),
       package: package(),
@@ -62,18 +61,14 @@ defmodule DateTimeParser.MixProject do
       {:exprof, "~> 0.2.0", only: :bench},
       {:ex_cldr_dates_times, "~> 2.0", only: [:dev, :test, :bench]},
       {:ex_cldr_calendars, "~> 1.17", only: [:dev, :test, :bench]}
-    ]
-    |> add_if({:timex, ">= 3.2.1 and <= 3.7.2"}, ">= 1.6.0")
-    |> add_if({:timex, "< 3.2.1"}, "< 1.6.0")
-    |> add_if({:gettext, "<= 0.16.1"}, "< 1.6.0")
-    |> add_if({:benchee, "~> 1.0", only: [:bench], runtime: false}, ">= 1.6.0")
-    |> add_if({:credo, "~> 1.1", only: [:dev, :test], runtime: false}, ">= 1.5.0")
-    |> add_if({:ex_doc, "~> 0.20", only: :dev, runtime: false}, ">= 1.7.0")
-    |> add_if(
+      {:kday, "~> 1.0", runtime: false},
+      {:benchee, "~> 1.0", only: [:bench], runtime: false},
+      {:tz, "~> 0.24", only: [:dev, :test, :bench], runtime: false},
+      {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.20", only: :dev, runtime: false},
       {:nimble_parsec, "~> 1.0",
-       github: "dashbitco/nimble_parsec", only: [:dev, :test], override: true, runtime: false},
-      ">= 1.6.0"
-    )
+       github: "dashbitco/nimble_parsec", only: [:dev, :test], override: true, runtime: false}
+    ]
   end
 
   defp docs() do
@@ -93,8 +88,8 @@ defmodule DateTimeParser.MixProject do
     []
     |> add_if("compile --force --warnings-as-errors", System.get_env("CI"))
     |> add_if("compile.nimble", !System.get_env("CI"))
-    |> add_if("format --check-formatted", ">= 1.10.0")
-    |> add_if("credo --strict", ">= 1.6.0")
+    |> add_if("format --check-formatted", true)
+    |> add_if("credo --strict", true)
     |> add_if("test", true)
   end
 

@@ -227,6 +227,8 @@ convert to UTC or to assume a time when not present.
 |`2016/1/9`|`2016-01-09`|parse| |
 |`2017-02-29`|`Could not parse "2017-02-29"`|parse_date| |
 |`2017-02-29 00:00:00 UTC`|`Could not parse "2017-02-29 00:00:00 UTC"`|parse_datetime| |
+|`2017-03-04 15:20:47 EDT`|`2017-03-04T20:20:47Z`|parse_datetime|`[to_utc: true]`|
+|`2017-03-04 15:20:47 EST`|`2017-03-04T20:20:47Z`|parse_datetime|`[to_utc: true]`|
 |`2017-04-31`|`Could not parse "2017-04-31"`|parse_date| |
 |`2017-04-31 00:00:00 UTC`|`Could not parse "2017-04-31 00:00:00 UTC"`|parse_datetime| |
 |`2017-06-31`|`Could not parse "2017-06-31"`|parse_date| |
@@ -239,7 +241,7 @@ convert to UTC or to assume a time when not present.
 |`2017-11-04 15:20:47 EDT`|`2017-11-04`|parse_date| |
 |`2017-11-04 15:20:47 EDT`|`2017-11-04T19:20:47Z`|parse_datetime|`[to_utc: true]`|
 |`2017-11-04 15:20:47 EST`|`2017-11-04`|parse_date| |
-|`2017-11-04 15:20:47 EST`|`2017-11-04T20:20:47Z`|parse_datetime|`[to_utc: true]`|
+|`2017-11-04 15:20:47 EST`|`2017-11-04T19:20:47Z`|parse_datetime|`[to_utc: true]`|
 |`2017-11-04 15:20:47 UTC`|`2017-11-04`|parse_date| |
 |`2017-11-04 15:20:47 UTC`|`2017-11-04T15:20:47Z`|parse_datetime| |
 |`2017-11-04 15:20:47+0000`|`2017-11-04`|parse_date| |
