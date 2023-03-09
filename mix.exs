@@ -60,7 +60,7 @@ defmodule DateTimeParser.MixProject do
     [
       {:exprof, "~> 0.2.0", only: :bench},
       {:ex_cldr_dates_times, "~> 2.0", only: [:dev, :test, :bench]},
-      {:ex_cldr_calendars, "~> 1.17", only: [:dev, :test, :bench]}
+      {:ex_cldr_calendars, "~> 1.17", only: [:dev, :test, :bench]},
       {:kday, "~> 1.0", runtime: false},
       {:benchee, "~> 1.0", only: [:bench], runtime: false},
       {:tz, "~> 0.24", only: [:dev, :test, :bench], runtime: false},
