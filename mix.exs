@@ -86,7 +86,7 @@ defmodule DateTimeParser.MixProject do
 
   defp tests() do
     []
-    |> add_if("compile --force --warnings-as-errors", System.get_env("CI"))
+    |> add_if("compile --force --warnings-as-errors", !System.get_env("CI"))
     |> add_if("compile.nimble", !System.get_env("CI"))
     |> add_if("format --check-formatted", true)
     |> add_if("credo --strict", true)
