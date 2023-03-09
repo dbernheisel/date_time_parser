@@ -48,7 +48,7 @@ defmodule DateTimeParser.Combinators do
                  end)
   else
     @vocal_days ~w(sunday monday tuesday wednesday thursday friday saturday) ++
-                  ~w(sun mon tue tues wed thu thur thurs fri sat)
+                  ~w(sun mon tue tues wed weds thu thur thurs fri sat)
     @months_map ~w(january february march april may june july august september october november december)
                 |> Enum.with_index(1)
                 |> Enum.reduce(Map.new(), fn {base_month, index}, acc ->
@@ -68,7 +68,7 @@ defmodule DateTimeParser.Combinators do
 
   ### TIMEZONE
   @time_separator ":"
-  @utc ~w[utc gmt z]
+  @utc ~w[utc gmt zulu z]
   @timezone_abbreviations DateTimeParser.TimezoneAbbreviations.all_abbreviations()
                           |> Enum.map(&String.downcase/1)
                           |> Enum.sort_by(&{byte_size(&1), &1}, :desc)
