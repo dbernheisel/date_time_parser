@@ -75,10 +75,7 @@ defmodule DateTimeParser.Parser.DateTime do
 
   def maybe_convert_to_utc(%DateTime{} = datetime, opts) do
     if Keyword.get(opts, :to_utc, false) do
-      case DateTime.shift_zone(datetime, "Etc/UTC") do
-        {:ok, udt} -> {:ok, udt}
-        {:error, _} = error -> error
-      end
+      DateTime.shift_zone(datetime, "Etc/UTC")
     else
       {:ok, datetime}
     end
