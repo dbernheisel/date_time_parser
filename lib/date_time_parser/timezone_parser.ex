@@ -35,14 +35,7 @@ defmodule DateTimeParser.TimezoneParser do
     import Inspect.Algebra
 
     def inspect(zone, _opts) do
-      concat([
-        "#<TimeZone ",
-        zone.name,
-        " (",
-        zone.utc_offset_hrs,
-        ")",
-        ">"
-      ])
+      concat(["#<TimeZone ", zone.name, " (", zone.utc_offset_hrs, ")", ">"])
     end
   end
 
@@ -53,12 +46,12 @@ defmodule DateTimeParser.TimezoneParser do
       concat([
         "#<TimeZoneRule ",
         rule.name,
-        " (",
+        " ",
         to_doc(rule.from, opts),
         " - ",
         to_doc(rule.until, opts),
-        ") ",
-        rule.save,
+        " ",
+        to_doc(rule.save, opts),
         ">"
       ])
     end

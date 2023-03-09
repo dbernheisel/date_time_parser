@@ -1,5 +1,5 @@
 # Generated from lib/combinators.ex.exs, do not edit.
-# Generated at 2023-03-04 08:08:59Z.
+# Generated at 2023-03-09 05:45:40Z.
 
 defmodule DateTimeParser.Combinators do
   @moduledoc false
@@ -334,7 +334,7 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__1(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__902(
+    parse_datetime_us__906(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -24545,11 +24545,11 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__846(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 101 or x0 === 109 or x0 === 100 or
-              x0 === 105 or
-              x0 === 97 or x0 === 98 or x0 === 106 or x0 === 112 or x0 === 108 or x0 === 107 or
-              x0 === 122 or
-              x0 === 102 or x0 === 104 or x0 === 119 or x0 === 99 or x0 === 116 do
+       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 109 or x0 === 105 or x0 === 101 or
+              x0 === 97 or
+              x0 === 107 or x0 === 122 or x0 === 100 or x0 === 104 or x0 === 119 or x0 === 99 or
+              x0 === 116 or
+              x0 === 112 do
     [acc | stack] = stack
     parse_datetime_us__843(rest, acc, stack, context, line, offset)
   end
@@ -24625,7 +24625,7 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__855(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__883(
+    parse_datetime_us__885(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -24650,24 +24650,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__859(
       rest,
       ["+1245/+1345"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 11
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1030/+1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["+1030/+1130"] ++ acc,
       stack,
       context,
       comb__line,
@@ -24712,24 +24694,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"ast/-0330", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["ast/-0330"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 9
-    )
-  end
-
-  defp parse_datetime_us__858(
          <<"-10/-0930", rest::binary>>,
          acc,
          stack,
@@ -24740,60 +24704,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__859(
       rest,
       ["-10/-0930"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 9
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"-0330/-03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["-0330/-03"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 9
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"-03/-0230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["-03/-0230"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 9
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"-03/-0130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["-03/-0130"] ++ acc,
       stack,
       context,
       comb__line,
@@ -24820,53 +24730,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"+08/+0820", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["+08/+0820"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 9
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"eet/eest", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(
-      rest,
-      ["eet/eest"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 8
-    )
-  end
-
-  defp parse_datetime_us__858(
-         <<"msk/msd", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["msk/msd"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"ist/gmt", rest::binary>>,
          acc,
          stack,
@@ -24878,17 +24741,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"gmt/ist", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["gmt/ist"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"gmt/bst", rest::binary>>,
          acc,
          stack,
@@ -24897,39 +24749,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["gmt/bst"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"bmt/bst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["bmt/bst"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-11/-10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-11/-10"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-07/-06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-07/-06"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
   defp parse_datetime_us__858(
@@ -24977,17 +24796,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"-02/-01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-02/-01"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"-01/+00", rest::binary>>,
          acc,
          stack,
@@ -25032,28 +24840,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"+10/+11", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+10/+11"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+09/+10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+09/+10"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"+08/+09", rest::binary>>,
          acc,
          stack,
@@ -25087,17 +24873,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"+05/+06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+05/+06"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"+04/+05", rest::binary>>,
          acc,
          stack,
@@ -25120,17 +24895,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"+02/+03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+02/+03"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
          <<"+01/+00", rest::binary>>,
          acc,
          stack,
@@ -25139,61 +24903,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["+01/+00"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+00/+01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+00/+01"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-1130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-1120", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-1120"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-1040", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-1040"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-1030", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-1030"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
   defp parse_datetime_us__858(
@@ -25208,17 +24917,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"-0830", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-0830"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
          <<"-0530", rest::binary>>,
          acc,
          stack,
@@ -25227,127 +24925,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["-0530"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-0430", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-0430"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-0345", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-0345"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-0330", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-0330"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+1230"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1220", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+1220"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1215", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+1215"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+1130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+1112", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+1112"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0930", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0930"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0730", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0730"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0720", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0720"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
   defp parse_datetime_us__858(
@@ -25395,61 +24972,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"+0245", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0245"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0230"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"+0030", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+0030"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime_us__858(
-         <<"yddt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["yddt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"wita", rest::binary>>,
          acc,
          stack,
@@ -25472,61 +24994,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"wemt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["wemt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"wast", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["wast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"tbmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["tbmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"sjmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["sjmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"sdmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["sdmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"sast", rest::binary>>,
          acc,
          stack,
@@ -25535,39 +25002,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["sast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"ppmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ppmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"pmmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["pmmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"plmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["plmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime_us__858(
@@ -25593,17 +25027,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"nzmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["nzmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"nzdt", rest::binary>>,
          acc,
          stack,
@@ -25612,17 +25035,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["nzdt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"nddt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["nddt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime_us__858(
@@ -25637,17 +25049,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"mdst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["mdst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"iddt", rest::binary>>,
          acc,
          stack,
@@ -25659,17 +25060,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"hkwt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["hkwt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"hkst", rest::binary>>,
          acc,
          stack,
@@ -25678,17 +25068,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["hkst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"ffmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ffmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime_us__858(
@@ -25722,39 +25101,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["cest"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"cemt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["cemt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"cast", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["cast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"bdst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["bdst"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime_us__858(
@@ -25802,28 +25148,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"ahst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ahst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"ahdt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ahdt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
          <<"aest", rest::binary>>,
          acc,
          stack,
@@ -25843,17 +25167,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["aedt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime_us__858(
-         <<"addt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["addt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime_us__858(
@@ -25879,61 +25192,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"ywt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ywt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"yst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["yst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"ypt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ypt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"ydt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["ydt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"wmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["wmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"wit", rest::binary>>,
          acc,
          stack,
@@ -25953,17 +25211,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["wib"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"wet", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["wet"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -25989,17 +25236,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"tmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["tmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"sst", rest::binary>>,
          acc,
          stack,
@@ -26008,39 +25244,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["sst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"smt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["smt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"rmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["rmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"qmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["qmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26077,17 +25280,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"pmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["pmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"pdt", rest::binary>>,
          acc,
          stack,
@@ -26099,17 +25291,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"nwt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["nwt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"nst", rest::binary>>,
          acc,
          stack,
@@ -26118,17 +25299,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["nst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"npt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["npt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26176,17 +25346,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"msd", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["msd"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"mpt", rest::binary>>,
          acc,
          stack,
@@ -26195,17 +25354,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["mpt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"mmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["mmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26220,28 +25368,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"lst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["lst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"lmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["lmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"kst", rest::binary>>,
          acc,
          stack,
@@ -26250,17 +25376,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["kst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"kmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["kmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26286,17 +25401,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"jmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["jmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"jdt", rest::binary>>,
          acc,
          stack,
@@ -26319,17 +25423,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"imt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["imt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"idt", rest::binary>>,
          acc,
          stack,
@@ -26338,17 +25431,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["idt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"hwt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["hwt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26363,39 +25445,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"hpt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["hpt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"hmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["hmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"hkt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["hkt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"hdt", rest::binary>>,
          acc,
          stack,
@@ -26407,17 +25456,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"gst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["gst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"gmt", rest::binary>>,
          acc,
          stack,
@@ -26426,28 +25464,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["gmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"gdt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["gdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"fmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["fmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26484,17 +25500,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"emt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["emt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"eet", rest::binary>>,
          acc,
          stack,
@@ -26525,17 +25530,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["eat"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"dmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["dmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26572,17 +25566,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"cmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["cmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"cet", rest::binary>>,
          acc,
          stack,
@@ -26616,50 +25599,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime_us__858(
-         <<"bst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["bst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"bmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["bmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"bdt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["bdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"awt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["awt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
          <<"ast", rest::binary>>,
          acc,
          stack,
@@ -26668,28 +25607,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["ast"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"apt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["apt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"amt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["amt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -26833,17 +25750,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime_us__859(rest, ["-01"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime_us__858(
-         <<"-00", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["-00"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime_us__858(
@@ -27000,17 +25906,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__859(rest, ["+01"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__858(
-         <<"+00", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__859(rest, ["+00"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime_us__858(rest, _acc, stack, context, line, offset) do
     [_, _, acc | stack] = stack
     parse_datetime_us__854(rest, acc, stack, context, line, offset)
@@ -27109,11 +26004,21 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__867(rest, acc, [count - 1 | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__869(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__870(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__869(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 47 do
+    [acc | stack] = stack
+    parse_datetime_us__861(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__870(
+  defp parse_datetime_us__869(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__870(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__870(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__871(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__871(
          <<":", rest::binary>>,
          acc,
          stack,
@@ -27121,19 +26026,19 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__871(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__872(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__870(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__871(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__871(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__872(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__871(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__872(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime_us__872(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime_us__873(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__872(
+  defp parse_datetime_us__873(
          <<x0, x1, rest::binary>>,
          acc,
          stack,
@@ -27142,17 +26047,17 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) do
-    parse_datetime_us__873(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__874(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__872(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__873(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__873(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__874(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__873(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__874(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__874(
+    parse_datetime_us__875(
       rest,
       [utc_offset: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -27162,23 +26067,23 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__874(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime_us__875(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime_us__856(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__875(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+  defp parse_datetime_us__876(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
     parse_datetime_us__862(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__876(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__877(rest, [], [acc | stack], context, line, offset)
   end
 
   defp parse_datetime_us__877(rest, acc, stack, context, line, offset) do
     parse_datetime_us__878(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__878(
+  defp parse_datetime_us__878(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__879(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__879(
          <<"utc", rest::binary>>,
          acc,
          stack,
@@ -27186,10 +26091,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__879(rest, acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__880(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__878(
+  defp parse_datetime_us__879(
          <<"gmt", rest::binary>>,
          acc,
          stack,
@@ -27197,10 +26102,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__879(rest, acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__880(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__878(
+  defp parse_datetime_us__879(
          <<"z", rest::binary>>,
          acc,
          stack,
@@ -27208,23 +26113,32 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__879(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__880(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__878(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__879(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime_us__875(rest, acc, stack, context, line, offset)
+    parse_datetime_us__876(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__879(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-    parse_datetime_us__880(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  defp parse_datetime_us__880(<<""::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__881("", acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__880(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__880(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__876(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__881(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+    parse_datetime_us__882(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__882(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__881(
+    parse_datetime_us__883(
       rest,
       [
         zone_abbr:
@@ -27240,23 +26154,23 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__881(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime_us__883(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime_us__856(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__882(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime_us__876(rest, [], stack, context, line, offset)
+  defp parse_datetime_us__884(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime_us__877(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime_us__883(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__884(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__885(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__886(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__884(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__885(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__886(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__887(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__885(
+  defp parse_datetime_us__887(
          <<"utc", rest::binary>>,
          acc,
          stack,
@@ -27264,10 +26178,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__886(rest, acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__888(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__885(
+  defp parse_datetime_us__887(
          <<"gmt", rest::binary>>,
          acc,
          stack,
@@ -27275,10 +26189,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__886(rest, acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__888(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__885(
+  defp parse_datetime_us__887(
          <<"z", rest::binary>>,
          acc,
          stack,
@@ -27286,23 +26200,32 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__886(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__888(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__885(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__887(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime_us__882(rest, acc, stack, context, line, offset)
+    parse_datetime_us__884(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__886(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-    parse_datetime_us__887(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  defp parse_datetime_us__888(<<""::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__889("", acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__887(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__888(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__884(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__889(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+    parse_datetime_us__890(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__890(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__888(
+    parse_datetime_us__891(
       rest,
       [
         zone_abbr:
@@ -27318,11 +26241,11 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__888(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__889(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__891(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__892(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__889(
+  defp parse_datetime_us__892(
          <<"+", rest::binary>>,
          acc,
          stack,
@@ -27330,10 +26253,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__890(rest, ["+"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__893(rest, ["+"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__889(
+  defp parse_datetime_us__892(
          <<"-", rest::binary>>,
          acc,
          stack,
@@ -27341,26 +26264,12 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__890(rest, ["-"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__893(rest, ["-"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__889(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__892(rest, _acc, stack, context, line, offset) do
     [acc | stack] = stack
-    parse_datetime_us__882(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__890(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime_us__891(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__890(rest, _acc, stack, context, line, offset) do
-    [acc | stack] = stack
-    parse_datetime_us__882(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__891(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__893(rest, acc, [1 | stack], context, line, offset)
+    parse_datetime_us__884(rest, acc, stack, context, line, offset)
   end
 
   defp parse_datetime_us__893(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
@@ -27368,27 +26277,51 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__894(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__893(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__892(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__893(rest, _acc, stack, context, line, offset) do
+    [acc | stack] = stack
+    parse_datetime_us__884(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__892(rest, acc, [_ | stack], context, line, offset) do
+  defp parse_datetime_us__894(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__896(rest, acc, [1 | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__896(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime_us__897(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__896(rest, acc, stack, context, line, offset) do
     parse_datetime_us__895(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__894(rest, acc, [1 | stack], context, line, offset) do
-    parse_datetime_us__895(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__895(rest, acc, [_ | stack], context, line, offset) do
+    parse_datetime_us__898(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__894(rest, acc, [count | stack], context, line, offset) do
-    parse_datetime_us__893(rest, acc, [count - 1 | stack], context, line, offset)
+  defp parse_datetime_us__897(rest, acc, [1 | stack], context, line, offset) do
+    parse_datetime_us__898(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__895(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__896(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__897(rest, acc, [count | stack], context, line, offset) do
+    parse_datetime_us__896(rest, acc, [count - 1 | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__896(
+  defp parse_datetime_us__898(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 47 do
+    [acc | stack] = stack
+    parse_datetime_us__884(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__898(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__899(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__899(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__900(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__900(
          <<":", rest::binary>>,
          acc,
          stack,
@@ -27396,19 +26329,19 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__897(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__901(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__896(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__897(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__900(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__901(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__897(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__901(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime_us__898(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime_us__902(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__898(
+  defp parse_datetime_us__902(
          <<x0, x1, rest::binary>>,
          acc,
          stack,
@@ -27417,17 +26350,17 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) do
-    parse_datetime_us__899(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__903(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__898(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__899(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__902(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__903(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__899(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__903(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__900(
+    parse_datetime_us__904(
       rest,
       [utc_offset: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -27437,7 +26370,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__900(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime_us__904(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime_us__856(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
@@ -27449,19 +26382,19 @@ defmodule DateTimeParser.Combinators do
     parse_datetime_us__11(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__901(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+  defp parse_datetime_us__905(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
     parse_datetime_us__397(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime_us__902(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__903(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__906(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__907(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__903(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__904(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__907(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__908(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"september", rest::binary>>,
          acc,
          stack,
@@ -27469,7 +26402,7 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(
+    parse_datetime_us__909(
       rest,
       ["september"] ++ acc,
       stack,
@@ -27479,7 +26412,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"november", rest::binary>>,
          acc,
          stack,
@@ -27487,7 +26420,7 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(
+    parse_datetime_us__909(
       rest,
       ["november"] ++ acc,
       stack,
@@ -27497,7 +26430,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"february", rest::binary>>,
          acc,
          stack,
@@ -27505,7 +26438,7 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(
+    parse_datetime_us__909(
       rest,
       ["february"] ++ acc,
       stack,
@@ -27515,7 +26448,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"december", rest::binary>>,
          acc,
          stack,
@@ -27523,7 +26456,7 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(
+    parse_datetime_us__909(
       rest,
       ["december"] ++ acc,
       stack,
@@ -27533,7 +26466,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"october", rest::binary>>,
          acc,
          stack,
@@ -27541,10 +26474,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["october"] ++ acc, stack, context, comb__line, comb__offset + 7)
+    parse_datetime_us__909(rest, ["october"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"january", rest::binary>>,
          acc,
          stack,
@@ -27552,10 +26485,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["january"] ++ acc, stack, context, comb__line, comb__offset + 7)
+    parse_datetime_us__909(rest, ["january"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"august", rest::binary>>,
          acc,
          stack,
@@ -27563,10 +26496,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["august"] ++ acc, stack, context, comb__line, comb__offset + 6)
+    parse_datetime_us__909(rest, ["august"] ++ acc, stack, context, comb__line, comb__offset + 6)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"march", rest::binary>>,
          acc,
          stack,
@@ -27574,10 +26507,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["march"] ++ acc, stack, context, comb__line, comb__offset + 5)
+    parse_datetime_us__909(rest, ["march"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"april", rest::binary>>,
          acc,
          stack,
@@ -27585,10 +26518,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["april"] ++ acc, stack, context, comb__line, comb__offset + 5)
+    parse_datetime_us__909(rest, ["april"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"sept", rest::binary>>,
          acc,
          stack,
@@ -27596,10 +26529,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["sept"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime_us__909(rest, ["sept"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"june", rest::binary>>,
          acc,
          stack,
@@ -27607,10 +26540,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["june"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime_us__909(rest, ["june"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"july", rest::binary>>,
          acc,
          stack,
@@ -27618,10 +26551,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["july"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime_us__909(rest, ["july"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"sep", rest::binary>>,
          acc,
          stack,
@@ -27629,10 +26562,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["sep"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["sep"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"oct", rest::binary>>,
          acc,
          stack,
@@ -27640,10 +26573,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["oct"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["oct"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"nov", rest::binary>>,
          acc,
          stack,
@@ -27651,10 +26584,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["nov"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["nov"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"may", rest::binary>>,
          acc,
          stack,
@@ -27662,10 +26595,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["may"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["may"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"mar", rest::binary>>,
          acc,
          stack,
@@ -27673,10 +26606,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["mar"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["mar"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"jun", rest::binary>>,
          acc,
          stack,
@@ -27684,10 +26617,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["jun"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["jun"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"jul", rest::binary>>,
          acc,
          stack,
@@ -27695,10 +26628,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["jul"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["jul"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"jan", rest::binary>>,
          acc,
          stack,
@@ -27706,10 +26639,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["jan"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["jan"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"feb", rest::binary>>,
          acc,
          stack,
@@ -27717,10 +26650,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["feb"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["feb"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"dec", rest::binary>>,
          acc,
          stack,
@@ -27728,10 +26661,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["dec"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["dec"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"aug", rest::binary>>,
          acc,
          stack,
@@ -27739,10 +26672,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["aug"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["aug"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(
+  defp parse_datetime_us__908(
          <<"apr", rest::binary>>,
          acc,
          stack,
@@ -27750,19 +26683,19 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__905(rest, ["apr"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__909(rest, ["apr"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__904(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__908(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__905(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__906(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__909(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__910(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__906(
+  defp parse_datetime_us__910(
          <<".", rest::binary>>,
          acc,
          stack,
@@ -27770,22 +26703,22 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__907(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__911(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__906(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__907(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__910(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__911(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__907(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__911(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime_us__908(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime_us__912(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__908(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__912(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__909(
+    parse_datetime_us__913(
       rest,
       Enum.map(user_acc, fn var -> vocal_month_to_numeric_month(var) end) ++ acc,
       stack,
@@ -27795,10 +26728,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__909(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__913(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__910(
+    parse_datetime_us__914(
       rest,
       [
         month:
@@ -27814,7 +26747,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__910(
+  defp parse_datetime_us__914(
          <<" ", rest::binary>>,
          acc,
          stack,
@@ -27822,23 +26755,23 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__911(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__915(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__910(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__914(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__911(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__912(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__915(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__916(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__912(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__913(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__916(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__917(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__913(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__919(
+  defp parse_datetime_us__917(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__923(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -27848,7 +26781,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"1", rest::binary>>,
          acc,
          stack,
@@ -27856,10 +26789,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"2", rest::binary>>,
          acc,
          stack,
@@ -27867,10 +26800,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"3", rest::binary>>,
          acc,
          stack,
@@ -27878,10 +26811,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"4", rest::binary>>,
          acc,
          stack,
@@ -27889,10 +26822,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"5", rest::binary>>,
          acc,
          stack,
@@ -27900,10 +26833,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"6", rest::binary>>,
          acc,
          stack,
@@ -27911,10 +26844,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"7", rest::binary>>,
          acc,
          stack,
@@ -27922,10 +26855,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"8", rest::binary>>,
          acc,
          stack,
@@ -27933,10 +26866,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(
+  defp parse_datetime_us__919(
          <<"9", rest::binary>>,
          acc,
          stack,
@@ -27944,33 +26877,33 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__916(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__920(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__915(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__919(rest, _acc, stack, context, line, offset) do
     [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__916(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime_us__920(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 48 and x0 <= 57 do
     [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__916(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__917(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__920(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__921(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__917(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__914(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__921(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__918(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__918(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime_us__915(rest, [], stack, context, line, offset)
+  defp parse_datetime_us__922(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime_us__919(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"01", rest::binary>>,
          acc,
          stack,
@@ -27978,10 +26911,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"02", rest::binary>>,
          acc,
          stack,
@@ -27989,10 +26922,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"03", rest::binary>>,
          acc,
          stack,
@@ -28000,10 +26933,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"04", rest::binary>>,
          acc,
          stack,
@@ -28011,10 +26944,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"05", rest::binary>>,
          acc,
          stack,
@@ -28022,10 +26955,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"06", rest::binary>>,
          acc,
          stack,
@@ -28033,10 +26966,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"07", rest::binary>>,
          acc,
          stack,
@@ -28044,10 +26977,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"08", rest::binary>>,
          acc,
          stack,
@@ -28055,10 +26988,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"09", rest::binary>>,
          acc,
          stack,
@@ -28066,10 +26999,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"10", rest::binary>>,
          acc,
          stack,
@@ -28077,10 +27010,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"11", rest::binary>>,
          acc,
          stack,
@@ -28088,10 +27021,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"12", rest::binary>>,
          acc,
          stack,
@@ -28099,10 +27032,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"13", rest::binary>>,
          acc,
          stack,
@@ -28110,10 +27043,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"14", rest::binary>>,
          acc,
          stack,
@@ -28121,10 +27054,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"15", rest::binary>>,
          acc,
          stack,
@@ -28132,10 +27065,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"16", rest::binary>>,
          acc,
          stack,
@@ -28143,10 +27076,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"17", rest::binary>>,
          acc,
          stack,
@@ -28154,10 +27087,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"18", rest::binary>>,
          acc,
          stack,
@@ -28165,10 +27098,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"19", rest::binary>>,
          acc,
          stack,
@@ -28176,10 +27109,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"20", rest::binary>>,
          acc,
          stack,
@@ -28187,10 +27120,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"21", rest::binary>>,
          acc,
          stack,
@@ -28198,10 +27131,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"22", rest::binary>>,
          acc,
          stack,
@@ -28209,10 +27142,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"23", rest::binary>>,
          acc,
          stack,
@@ -28220,10 +27153,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"24", rest::binary>>,
          acc,
          stack,
@@ -28231,10 +27164,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"25", rest::binary>>,
          acc,
          stack,
@@ -28242,10 +27175,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"26", rest::binary>>,
          acc,
          stack,
@@ -28253,10 +27186,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"27", rest::binary>>,
          acc,
          stack,
@@ -28264,10 +27197,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"28", rest::binary>>,
          acc,
          stack,
@@ -28275,10 +27208,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"29", rest::binary>>,
          acc,
          stack,
@@ -28286,10 +27219,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"30", rest::binary>>,
          acc,
          stack,
@@ -28297,10 +27230,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(
+  defp parse_datetime_us__923(
          <<"31", rest::binary>>,
          acc,
          stack,
@@ -28308,21 +27241,21 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__920(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__924(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__919(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__918(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__923(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__922(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__920(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__914(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__924(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__918(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__914(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__918(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__921(
+    parse_datetime_us__925(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -28332,10 +27265,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__921(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__925(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__922(
+    parse_datetime_us__926(
       rest,
       [
         day:
@@ -28351,7 +27284,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__922(
+  defp parse_datetime_us__926(
          <<" ", rest::binary>>,
          acc,
          stack,
@@ -28359,15 +27292,15 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__923(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__927(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__922(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__926(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__923(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__941(
+  defp parse_datetime_us__927(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__945(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -28377,1248 +27310,407 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__925(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__926(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__929(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__930(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__926(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__927(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__927(
-         <<"00", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"02", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"04", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"05", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"07", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"08", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"09", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"23", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"22", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"21", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"20", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"19", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"18", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"17", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"16", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"15", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"14", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"13", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"12", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"11", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__927(
-         <<"9", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"8", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"7", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"6", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"5", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"4", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"3", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"2", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"1", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(
-         <<"0", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__928(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__927(rest, _acc, stack, context, line, offset) do
-    [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__928(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__928(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__929(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__929(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime_us__930(
-      rest,
-      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime_us__930(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime_us__931(
-      rest,
-      [
-        hour:
-          case :lists.reverse(user_acc) do
-            [one] -> one
-            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
-          end
-      ] ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
+  defp parse_datetime_us__930(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__931(rest, [], [acc | stack], context, line, offset)
   end
 
   defp parse_datetime_us__931(
-         <<":", rest::binary>>,
+         <<"00", rest::binary>>,
          acc,
          stack,
          context,
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__932(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__932(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"01", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"02", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"03", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"04", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"05", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"06", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"07", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"08", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"09", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"23", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"22", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"21", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"20", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"19", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"18", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"17", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"16", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"15", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"14", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"13", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"12", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"11", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"10", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__931(
+         <<"9", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"8", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"7", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"6", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"5", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"4", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"3", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"2", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"1", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__931(
+         <<"0", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__932(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
   defp parse_datetime_us__931(rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+    [_, _, _, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__932(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, _, _, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
   defp parse_datetime_us__932(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__933(rest, [], [acc | stack], context, line, offset)
+    parse_datetime_us__933(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__933(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__934(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__934(
-         <<"00", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"02", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"04", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"05", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"07", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"08", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"09", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"59", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"58", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"57", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"56", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"55", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"54", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"53", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"52", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"51", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"50", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"49", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"48", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"47", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"46", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"45", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"44", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"43", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"42", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"41", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"40", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"39", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"38", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"37", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"36", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"35", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"34", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"33", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"32", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"31", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"30", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"29", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"28", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"27", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"26", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"25", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"24", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"23", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"22", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"21", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"20", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"19", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"18", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"17", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"16", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"15", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"14", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"13", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"12", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"11", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__934(
-         <<"9", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"8", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"7", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"6", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"5", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"4", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"3", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"2", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"1", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(
-         <<"0", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__935(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__934(rest, _acc, stack, context, line, offset) do
-    [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__935(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, _, _, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__935(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__936(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__936(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__933(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__937(
+    parse_datetime_us__934(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -29628,456 +27720,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__937(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__934(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__938(
-      rest,
-      [
-        minute:
-          case :lists.reverse(user_acc) do
-            [one] -> one
-            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
-          end
-      ] ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime_us__938(<<":", _::binary>> = rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__938(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__939(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__939(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__924(rest, acc ++ previous_acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__940(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime_us__925(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__941(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__942(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__942(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__943(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__943(
-         <<"00", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"02", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"04", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"05", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"07", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"08", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"09", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"23", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"22", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"21", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"20", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"19", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"18", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"17", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"16", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"15", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"14", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"13", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"12", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"11", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__943(
-         <<"9", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"8", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"7", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"6", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"5", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"4", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"3", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"2", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"1", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(
-         <<"0", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__944(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__943(rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__944(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, acc | stack] = stack
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__944(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__945(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__945(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime_us__946(
-      rest,
-      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime_us__946(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime_us__947(
+    parse_datetime_us__935(
       rest,
       [
         hour:
@@ -30093,7 +27739,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__947(
+  defp parse_datetime_us__935(
          <<":", rest::binary>>,
          acc,
          stack,
@@ -30101,22 +27747,23 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__948(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__936(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__947(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__935(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__948(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__949(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__936(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__937(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__949(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__950(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__937(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__938(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"00", rest::binary>>,
          acc,
          stack,
@@ -30124,10 +27771,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"01", rest::binary>>,
          acc,
          stack,
@@ -30135,10 +27782,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"02", rest::binary>>,
          acc,
          stack,
@@ -30146,10 +27793,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"03", rest::binary>>,
          acc,
          stack,
@@ -30157,10 +27804,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"04", rest::binary>>,
          acc,
          stack,
@@ -30168,10 +27815,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"05", rest::binary>>,
          acc,
          stack,
@@ -30179,10 +27826,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"06", rest::binary>>,
          acc,
          stack,
@@ -30190,10 +27837,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"07", rest::binary>>,
          acc,
          stack,
@@ -30201,10 +27848,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"08", rest::binary>>,
          acc,
          stack,
@@ -30212,10 +27859,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"09", rest::binary>>,
          acc,
          stack,
@@ -30223,10 +27870,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"59", rest::binary>>,
          acc,
          stack,
@@ -30234,10 +27881,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"58", rest::binary>>,
          acc,
          stack,
@@ -30245,10 +27892,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"57", rest::binary>>,
          acc,
          stack,
@@ -30256,10 +27903,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"56", rest::binary>>,
          acc,
          stack,
@@ -30267,10 +27914,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"55", rest::binary>>,
          acc,
          stack,
@@ -30278,10 +27925,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"54", rest::binary>>,
          acc,
          stack,
@@ -30289,10 +27936,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"53", rest::binary>>,
          acc,
          stack,
@@ -30300,10 +27947,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"52", rest::binary>>,
          acc,
          stack,
@@ -30311,10 +27958,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"51", rest::binary>>,
          acc,
          stack,
@@ -30322,10 +27969,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"50", rest::binary>>,
          acc,
          stack,
@@ -30333,10 +27980,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"49", rest::binary>>,
          acc,
          stack,
@@ -30344,10 +27991,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"48", rest::binary>>,
          acc,
          stack,
@@ -30355,10 +28002,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"47", rest::binary>>,
          acc,
          stack,
@@ -30366,10 +28013,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"46", rest::binary>>,
          acc,
          stack,
@@ -30377,10 +28024,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"45", rest::binary>>,
          acc,
          stack,
@@ -30388,10 +28035,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"44", rest::binary>>,
          acc,
          stack,
@@ -30399,10 +28046,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"43", rest::binary>>,
          acc,
          stack,
@@ -30410,10 +28057,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"42", rest::binary>>,
          acc,
          stack,
@@ -30421,10 +28068,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"41", rest::binary>>,
          acc,
          stack,
@@ -30432,10 +28079,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"40", rest::binary>>,
          acc,
          stack,
@@ -30443,10 +28090,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"39", rest::binary>>,
          acc,
          stack,
@@ -30454,10 +28101,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"38", rest::binary>>,
          acc,
          stack,
@@ -30465,10 +28112,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"37", rest::binary>>,
          acc,
          stack,
@@ -30476,10 +28123,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"36", rest::binary>>,
          acc,
          stack,
@@ -30487,10 +28134,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"35", rest::binary>>,
          acc,
          stack,
@@ -30498,10 +28145,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"34", rest::binary>>,
          acc,
          stack,
@@ -30509,10 +28156,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"33", rest::binary>>,
          acc,
          stack,
@@ -30520,10 +28167,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"32", rest::binary>>,
          acc,
          stack,
@@ -30531,10 +28178,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"31", rest::binary>>,
          acc,
          stack,
@@ -30542,10 +28189,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"30", rest::binary>>,
          acc,
          stack,
@@ -30553,10 +28200,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"29", rest::binary>>,
          acc,
          stack,
@@ -30564,10 +28211,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"28", rest::binary>>,
          acc,
          stack,
@@ -30575,10 +28222,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"27", rest::binary>>,
          acc,
          stack,
@@ -30586,10 +28233,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"26", rest::binary>>,
          acc,
          stack,
@@ -30597,10 +28244,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"25", rest::binary>>,
          acc,
          stack,
@@ -30608,10 +28255,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"24", rest::binary>>,
          acc,
          stack,
@@ -30619,10 +28266,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"23", rest::binary>>,
          acc,
          stack,
@@ -30630,10 +28277,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"22", rest::binary>>,
          acc,
          stack,
@@ -30641,10 +28288,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"21", rest::binary>>,
          acc,
          stack,
@@ -30652,10 +28299,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"20", rest::binary>>,
          acc,
          stack,
@@ -30663,10 +28310,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"19", rest::binary>>,
          acc,
          stack,
@@ -30674,10 +28321,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"18", rest::binary>>,
          acc,
          stack,
@@ -30685,10 +28332,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"17", rest::binary>>,
          acc,
          stack,
@@ -30696,10 +28343,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"16", rest::binary>>,
          acc,
          stack,
@@ -30707,10 +28354,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"15", rest::binary>>,
          acc,
          stack,
@@ -30718,10 +28365,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"14", rest::binary>>,
          acc,
          stack,
@@ -30729,10 +28376,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"13", rest::binary>>,
          acc,
          stack,
@@ -30740,10 +28387,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"12", rest::binary>>,
          acc,
          stack,
@@ -30751,10 +28398,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"11", rest::binary>>,
          acc,
          stack,
@@ -30762,10 +28409,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"10", rest::binary>>,
          acc,
          stack,
@@ -30773,10 +28420,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__939(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"9", rest::binary>>,
          acc,
          stack,
@@ -30784,10 +28431,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"8", rest::binary>>,
          acc,
          stack,
@@ -30795,10 +28442,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"7", rest::binary>>,
          acc,
          stack,
@@ -30806,10 +28453,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"6", rest::binary>>,
          acc,
          stack,
@@ -30817,10 +28464,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"5", rest::binary>>,
          acc,
          stack,
@@ -30828,10 +28475,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"4", rest::binary>>,
          acc,
          stack,
@@ -30839,10 +28486,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"3", rest::binary>>,
          acc,
          stack,
@@ -30850,10 +28497,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"2", rest::binary>>,
          acc,
          stack,
@@ -30861,10 +28508,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"1", rest::binary>>,
          acc,
          stack,
@@ -30872,10 +28519,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(
+  defp parse_datetime_us__938(
          <<"0", rest::binary>>,
          acc,
          stack,
@@ -30883,28 +28530,28 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__951(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__939(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__950(rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__938(rest, _acc, stack, context, line, offset) do
+    [_, _, _, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__951(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime_us__939(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 54 and x0 <= 57 do
-    [_, acc | stack] = stack
+    [_, _, _, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__939(rest, acc, stack, context, line, offset) do
     parse_datetime_us__940(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__951(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__952(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__952(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__940(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__953(
+    parse_datetime_us__941(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -30914,10 +28561,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__953(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__941(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__954(
+    parse_datetime_us__942(
       rest,
       [
         minute:
@@ -30933,30 +28580,32 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__954(
-         <<":", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__955(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime_us__942(<<":", _::binary>> = rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__954(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__942(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__943(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__955(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__956(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__943(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__928(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__956(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__957(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__944(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime_us__929(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__945(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__946(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__946(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__947(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__947(
          <<"00", rest::binary>>,
          acc,
          stack,
@@ -30964,10 +28613,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"01", rest::binary>>,
          acc,
          stack,
@@ -30975,10 +28624,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"02", rest::binary>>,
          acc,
          stack,
@@ -30986,10 +28635,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"03", rest::binary>>,
          acc,
          stack,
@@ -30997,10 +28646,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"04", rest::binary>>,
          acc,
          stack,
@@ -31008,10 +28657,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"05", rest::binary>>,
          acc,
          stack,
@@ -31019,10 +28668,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"06", rest::binary>>,
          acc,
          stack,
@@ -31030,10 +28679,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"07", rest::binary>>,
          acc,
          stack,
@@ -31041,10 +28690,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"08", rest::binary>>,
          acc,
          stack,
@@ -31052,10 +28701,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"09", rest::binary>>,
          acc,
          stack,
@@ -31063,406 +28712,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
-         <<"59", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"58", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"57", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"56", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"55", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"54", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"53", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"52", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"51", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"50", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"49", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"48", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"47", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"46", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"45", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"44", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"43", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"42", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"41", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"40", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"39", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"38", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"37", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"36", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"35", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"34", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"33", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"32", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"31", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"30", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"29", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"28", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"27", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"26", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"25", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
-         <<"24", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime_us__958(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"23", rest::binary>>,
          acc,
          stack,
@@ -31470,10 +28723,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"22", rest::binary>>,
          acc,
          stack,
@@ -31481,10 +28734,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"21", rest::binary>>,
          acc,
          stack,
@@ -31492,10 +28745,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"20", rest::binary>>,
          acc,
          stack,
@@ -31503,10 +28756,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"19", rest::binary>>,
          acc,
          stack,
@@ -31514,10 +28767,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"18", rest::binary>>,
          acc,
          stack,
@@ -31525,10 +28778,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"17", rest::binary>>,
          acc,
          stack,
@@ -31536,10 +28789,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"16", rest::binary>>,
          acc,
          stack,
@@ -31547,10 +28800,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"15", rest::binary>>,
          acc,
          stack,
@@ -31558,10 +28811,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"14", rest::binary>>,
          acc,
          stack,
@@ -31569,10 +28822,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"13", rest::binary>>,
          acc,
          stack,
@@ -31580,10 +28833,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"12", rest::binary>>,
          acc,
          stack,
@@ -31591,10 +28844,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"11", rest::binary>>,
          acc,
          stack,
@@ -31602,10 +28855,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"10", rest::binary>>,
          acc,
          stack,
@@ -31613,10 +28866,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__948(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"9", rest::binary>>,
          acc,
          stack,
@@ -31624,10 +28877,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"8", rest::binary>>,
          acc,
          stack,
@@ -31635,10 +28888,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"7", rest::binary>>,
          acc,
          stack,
@@ -31646,10 +28899,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"6", rest::binary>>,
          acc,
          stack,
@@ -31657,10 +28910,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"5", rest::binary>>,
          acc,
          stack,
@@ -31668,10 +28921,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"4", rest::binary>>,
          acc,
          stack,
@@ -31679,10 +28932,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"3", rest::binary>>,
          acc,
          stack,
@@ -31690,10 +28943,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"2", rest::binary>>,
          acc,
          stack,
@@ -31701,10 +28954,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"1", rest::binary>>,
          acc,
          stack,
@@ -31712,10 +28965,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(
+  defp parse_datetime_us__947(
          <<"0", rest::binary>>,
          acc,
          stack,
@@ -31723,28 +28976,28 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__958(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__948(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__957(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__947(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__958(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime_us__948(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 54 and x0 <= 57 do
     [_, acc | stack] = stack
-    parse_datetime_us__940(rest, acc, stack, context, line, offset)
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__958(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__959(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__948(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__949(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__959(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__949(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__960(
+    parse_datetime_us__950(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -31754,10 +29007,1690 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__960(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__950(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__961(
+    parse_datetime_us__951(
+      rest,
+      [
+        hour:
+          case :lists.reverse(user_acc) do
+            [one] -> one
+            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
+          end
+      ] ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime_us__951(
+         <<":", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__952(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__951(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__952(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__953(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__953(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__954(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__954(
+         <<"00", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"01", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"02", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"03", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"04", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"05", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"06", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"07", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"08", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"09", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"59", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"58", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"57", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"56", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"55", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"54", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"53", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"52", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"51", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"50", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"49", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"48", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"47", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"46", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"45", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"44", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"43", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"42", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"41", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"40", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"39", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"38", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"37", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"36", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"35", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"34", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"33", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"32", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"31", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"30", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"29", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"28", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"27", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"26", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"25", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"24", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"23", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"22", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"21", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"20", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"19", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"18", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"17", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"16", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"15", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"14", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"13", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"12", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"11", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"10", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__954(
+         <<"9", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"8", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"7", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"6", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"5", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"4", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"3", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"2", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"1", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(
+         <<"0", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__955(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__954(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__955(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, acc | stack] = stack
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__955(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__956(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__956(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime_us__957(
+      rest,
+      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime_us__957(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime_us__958(
+      rest,
+      [
+        minute:
+          case :lists.reverse(user_acc) do
+            [one] -> one
+            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
+          end
+      ] ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime_us__958(
+         <<":", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__959(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__958(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__959(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__960(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__960(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__961(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__961(
+         <<"00", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"01", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"02", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"03", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"04", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"05", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"06", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"07", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"08", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"09", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"59", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"58", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"57", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"56", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"55", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"54", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"53", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"52", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"51", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"50", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"49", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"48", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"47", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"46", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"45", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"44", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"43", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"42", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"41", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"40", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"39", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"38", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"37", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"36", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"35", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"34", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"33", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"32", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"31", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"30", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"29", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"28", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"27", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"26", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"25", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"24", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"23", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"22", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"21", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"20", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"19", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"18", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"17", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"16", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"15", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"14", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"13", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"12", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"11", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"10", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime_us__961(
+         <<"9", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"8", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"7", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"6", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"5", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"4", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"3", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"2", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"1", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(
+         <<"0", rest::binary>>,
+         acc,
+         stack,
+         context,
+         comb__line,
+         comb__offset
+       ) do
+    parse_datetime_us__962(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__961(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__962(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, acc | stack] = stack
+    parse_datetime_us__944(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__962(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__963(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__963(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime_us__964(
+      rest,
+      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime_us__964(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime_us__965(
       rest,
       [
         second:
@@ -31773,7 +30706,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__961(
+  defp parse_datetime_us__965(
          <<".", rest::binary>>,
          acc,
          stack,
@@ -31781,15 +30714,15 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__962(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__966(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__961(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__962(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__965(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__966(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__962(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__966(
+  defp parse_datetime_us__966(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__970(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -31799,57 +30732,57 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__964(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__963(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__968(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__967(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__965(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime_us__964(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__966(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__967(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__967(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime_us__968(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime_us__967(rest, _acc, stack, context, line, offset) do
-    [acc | stack] = stack
-    parse_datetime_us__965(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__968(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__970(rest, acc, [23 | stack], context, line, offset)
-  end
-
-  defp parse_datetime_us__970(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime_us__971(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime_us__969(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime_us__968(rest, [], stack, context, line, offset)
   end
 
   defp parse_datetime_us__970(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__971(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__971(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime_us__972(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime_us__971(rest, _acc, stack, context, line, offset) do
+    [acc | stack] = stack
     parse_datetime_us__969(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__969(rest, acc, [_ | stack], context, line, offset) do
-    parse_datetime_us__972(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__972(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__974(rest, acc, [23 | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__971(rest, acc, [1 | stack], context, line, offset) do
-    parse_datetime_us__972(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__974(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime_us__975(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__971(rest, acc, [count | stack], context, line, offset) do
-    parse_datetime_us__970(rest, acc, [count - 1 | stack], context, line, offset)
+  defp parse_datetime_us__974(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__973(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__972(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__973(rest, acc, [_ | stack], context, line, offset) do
+    parse_datetime_us__976(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__975(rest, acc, [1 | stack], context, line, offset) do
+    parse_datetime_us__976(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__975(rest, acc, [count | stack], context, line, offset) do
+    parse_datetime_us__974(rest, acc, [count - 1 | stack], context, line, offset)
+  end
+
+  defp parse_datetime_us__976(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__973(
+    parse_datetime_us__977(
       rest,
       [microsecond: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -31859,19 +30792,19 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__973(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__963(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__977(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__967(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__963(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__924(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__967(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__928(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__924(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__974(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__928(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__978(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__974(
+  defp parse_datetime_us__978(
          <<" ", rest::binary>>,
          acc,
          stack,
@@ -31879,20 +30812,20 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__975(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__979(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__974(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__975(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__978(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__979(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__975(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__979(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime_us__976(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime_us__980(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__976(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__980(
+  defp parse_datetime_us__980(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__984(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -31902,19 +30835,19 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__978(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__977(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__982(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__981(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__979(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime_us__978(rest, [], stack, context, line, offset)
+  defp parse_datetime_us__983(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime_us__982(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime_us__980(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__981(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__984(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__985(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"am", rest::binary>>,
          acc,
          stack,
@@ -31922,10 +30855,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["am"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__986(rest, ["am"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"a.m", rest::binary>>,
          acc,
          stack,
@@ -31933,10 +30866,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["a.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__986(rest, ["a.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"a.m.", rest::binary>>,
          acc,
          stack,
@@ -31944,10 +30877,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["a.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime_us__986(rest, ["a.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"a_m", rest::binary>>,
          acc,
          stack,
@@ -31955,10 +30888,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["a_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__986(rest, ["a_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"pm", rest::binary>>,
          acc,
          stack,
@@ -31966,10 +30899,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["pm"] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime_us__986(rest, ["pm"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"p.m", rest::binary>>,
          acc,
          stack,
@@ -31977,10 +30910,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["p.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__986(rest, ["p.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"p.m.", rest::binary>>,
          acc,
          stack,
@@ -31988,10 +30921,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["p.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime_us__986(rest, ["p.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"p_m", rest::binary>>,
          acc,
          stack,
@@ -31999,10 +30932,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["p_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+    parse_datetime_us__986(rest, ["p_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"a", rest::binary>>,
          acc,
          stack,
@@ -32010,10 +30943,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["a"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__986(rest, ["a"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__981(
+  defp parse_datetime_us__985(
          <<"p", rest::binary>>,
          acc,
          stack,
@@ -32021,32 +30954,32 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__982(rest, ["p"] ++ acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__986(rest, ["p"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__981(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime_us__985(rest, _acc, stack, context, line, offset) do
     [acc | stack] = stack
-    parse_datetime_us__979(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__982(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 101 or x0 === 109 or x0 === 100 or
-              x0 === 105 or
-              x0 === 97 or x0 === 98 or x0 === 106 or x0 === 112 or x0 === 108 or x0 === 107 or
-              x0 === 122 or
-              x0 === 102 or x0 === 104 or x0 === 119 or x0 === 99 or x0 === 116 do
-    [acc | stack] = stack
-    parse_datetime_us__979(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime_us__982(rest, acc, stack, context, line, offset) do
     parse_datetime_us__983(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__983(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__986(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 109 or x0 === 105 or x0 === 101 or
+              x0 === 97 or
+              x0 === 107 or x0 === 122 or x0 === 100 or x0 === 104 or x0 === 119 or x0 === 99 or
+              x0 === 116 or
+              x0 === 112 do
+    [acc | stack] = stack
+    parse_datetime_us__983(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__986(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__987(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime_us__987(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime_us__984(
+    parse_datetime_us__988(
       rest,
       [
         am_pm:
@@ -32062,15 +30995,15 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__984(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime_us__977(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime_us__988(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime_us__981(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__977(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__985(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime_us__981(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__989(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime_us__985(
+  defp parse_datetime_us__989(
          <<" ", rest::binary>>,
          acc,
          stack,
@@ -32078,19 +31011,19 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime_us__986(rest, acc, stack, context, comb__line, comb__offset + 1)
+    parse_datetime_us__990(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime_us__985(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime_us__986(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime_us__989(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime_us__990(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime_us__986(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime_us__990(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime_us__987(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime_us__991(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__987(
+  defp parse_datetime_us__991(
          <<x0, x1, x2, x3, rest::binary>>,
          acc,
          stack,
@@ -32100,7 +31033,7 @@ defmodule DateTimeParser.Combinators do
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) and (x2 >= 48 and x2 <= 57) and
               (x3 >= 48 and x3 <= 57) do
-    parse_datetime_us__988(
+    parse_datetime_us__992(
       rest,
       [year: [x0, x1, x2, x3]] ++ acc,
       stack,
@@ -32110,11 +31043,11 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime_us__987(rest, acc, stack, context, line, offset) do
-    parse_datetime_us__901(rest, acc, stack, context, line, offset)
+  defp parse_datetime_us__991(rest, acc, stack, context, line, offset) do
+    parse_datetime_us__905(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime_us__988(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime_us__992(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime_us__11(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
@@ -32351,7 +31284,7 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__1(rest, acc, stack, context, line, offset) do
-    parse_datetime__898(
+    parse_datetime__902(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -46056,11 +44989,11 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__842(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 101 or x0 === 109 or x0 === 100 or
-              x0 === 105 or
-              x0 === 97 or x0 === 98 or x0 === 106 or x0 === 112 or x0 === 108 or x0 === 107 or
-              x0 === 122 or
-              x0 === 102 or x0 === 104 or x0 === 119 or x0 === 99 or x0 === 116 do
+       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 109 or x0 === 105 or x0 === 101 or
+              x0 === 97 or
+              x0 === 107 or x0 === 122 or x0 === 100 or x0 === 104 or x0 === 119 or x0 === 99 or
+              x0 === 116 or
+              x0 === 112 do
     [acc | stack] = stack
     parse_datetime__839(rest, acc, stack, context, line, offset)
   end
@@ -46133,7 +45066,7 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__851(rest, acc, stack, context, line, offset) do
-    parse_datetime__879(
+    parse_datetime__881(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -46158,24 +45091,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(
       rest,
       ["+1245/+1345"] ++ acc,
-      stack,
-      context,
-      comb__line,
-      comb__offset + 11
-    )
-  end
-
-  defp parse_datetime__854(
-         <<"+1030/+1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(
-      rest,
-      ["+1030/+1130"] ++ acc,
       stack,
       context,
       comb__line,
@@ -46220,17 +45135,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"ast/-0330", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["ast/-0330"] ++ acc, stack, context, comb__line, comb__offset + 9)
-  end
-
-  defp parse_datetime__854(
          <<"-10/-0930", rest::binary>>,
          acc,
          stack,
@@ -46239,39 +45143,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["-10/-0930"] ++ acc, stack, context, comb__line, comb__offset + 9)
-  end
-
-  defp parse_datetime__854(
-         <<"-0330/-03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-0330/-03"] ++ acc, stack, context, comb__line, comb__offset + 9)
-  end
-
-  defp parse_datetime__854(
-         <<"-03/-0230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-03/-0230"] ++ acc, stack, context, comb__line, comb__offset + 9)
-  end
-
-  defp parse_datetime__854(
-         <<"-03/-0130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-03/-0130"] ++ acc, stack, context, comb__line, comb__offset + 9)
   end
 
   defp parse_datetime__854(
@@ -46286,39 +45157,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"+08/+0820", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+08/+0820"] ++ acc, stack, context, comb__line, comb__offset + 9)
-  end
-
-  defp parse_datetime__854(
-         <<"eet/eest", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["eet/eest"] ++ acc, stack, context, comb__line, comb__offset + 8)
-  end
-
-  defp parse_datetime__854(
-         <<"msk/msd", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["msk/msd"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"ist/gmt", rest::binary>>,
          acc,
          stack,
@@ -46330,17 +45168,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"gmt/ist", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["gmt/ist"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"gmt/bst", rest::binary>>,
          acc,
          stack,
@@ -46349,39 +45176,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["gmt/bst"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"bmt/bst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["bmt/bst"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"-11/-10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-11/-10"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"-07/-06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-07/-06"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
   defp parse_datetime__854(
@@ -46429,17 +45223,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"-02/-01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-02/-01"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"-01/+00", rest::binary>>,
          acc,
          stack,
@@ -46484,28 +45267,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"+10/+11", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+10/+11"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"+09/+10", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+09/+10"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"+08/+09", rest::binary>>,
          acc,
          stack,
@@ -46539,17 +45300,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"+05/+06", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+05/+06"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"+04/+05", rest::binary>>,
          acc,
          stack,
@@ -46572,17 +45322,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"+02/+03", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+02/+03"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
          <<"+01/+00", rest::binary>>,
          acc,
          stack,
@@ -46591,61 +45330,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["+01/+00"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"+00/+01", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+00/+01"] ++ acc, stack, context, comb__line, comb__offset + 7)
-  end
-
-  defp parse_datetime__854(
-         <<"-1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-1130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-1120", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-1120"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-1040", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-1040"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-1030", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-1030"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
   defp parse_datetime__854(
@@ -46660,17 +45344,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"-0830", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-0830"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
          <<"-0530", rest::binary>>,
          acc,
          stack,
@@ -46679,127 +45352,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["-0530"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-0430", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-0430"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-0345", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-0345"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"-0330", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["-0330"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+1230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+1230"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+1220", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+1220"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+1215", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+1215"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+1130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+1130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+1112", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+1112"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0930", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0930"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0730", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0730"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0720", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0720"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
   defp parse_datetime__854(
@@ -46847,61 +45399,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"+0245", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0245"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0230", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0230"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0130", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0130"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"+0030", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["+0030"] ++ acc, stack, context, comb__line, comb__offset + 5)
-  end
-
-  defp parse_datetime__854(
-         <<"yddt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["yddt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"wita", rest::binary>>,
          acc,
          stack,
@@ -46924,61 +45421,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"wemt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["wemt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"wast", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["wast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"tbmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["tbmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"sjmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["sjmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"sdmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["sdmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"sast", rest::binary>>,
          acc,
          stack,
@@ -46987,39 +45429,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["sast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"ppmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["ppmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"pmmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["pmmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"plmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["plmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime__854(
@@ -47045,17 +45454,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"nzmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["nzmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"nzdt", rest::binary>>,
          acc,
          stack,
@@ -47064,17 +45462,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["nzdt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"nddt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["nddt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime__854(
@@ -47089,17 +45476,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"mdst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["mdst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"iddt", rest::binary>>,
          acc,
          stack,
@@ -47111,17 +45487,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"hkwt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["hkwt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"hkst", rest::binary>>,
          acc,
          stack,
@@ -47130,17 +45495,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["hkst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"ffmt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["ffmt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime__854(
@@ -47174,39 +45528,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["cest"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"cemt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["cemt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"cast", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["cast"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"bdst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["bdst"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime__854(
@@ -47254,28 +45575,6 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_datetime__854(
-         <<"ahst", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["ahst"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"ahdt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["ahdt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
          <<"aest", rest::binary>>,
          acc,
          stack,
@@ -47295,17 +45594,6 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        ) do
     parse_datetime__855(rest, ["aedt"] ++ acc, stack, context, comb__line, comb__offset + 4)
-  end
-
-  defp parse_datetime__854(
-         <<"addt", rest::binary>>,
-         acc,
-         stack,
-         context,
-         comb__line,
-         comb__offset
-       ) do
-    parse_datetime__855(rest, ["addt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
   defp parse_datetime__854(
@@ -47330,36 +45618,12 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["acdt"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__854(<<"ywt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["ywt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"yst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["yst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"ypt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["ypt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"ydt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["ydt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"wmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["wmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"wit", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["wit"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"wib", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["wib"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"wet", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["wet"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"wat", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47370,24 +45634,8 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["utc"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"tmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["tmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"sst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["sst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"smt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["smt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"rmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["rmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"qmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["qmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"pwt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47402,24 +45650,12 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["ppt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"pmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["pmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"pdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["pdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"nwt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["nwt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"nst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["nst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"npt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["npt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"ndt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47438,36 +45674,16 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["msk"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"msd", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["msd"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"mpt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["mpt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"mmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["mmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"mdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["mdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"lst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["lst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"lmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["lmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"kst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["kst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"kmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["kmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"kdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47478,10 +45694,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["jst"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"jmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["jmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"jdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["jdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
@@ -47490,52 +45702,20 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["ist"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"imt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["imt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"idt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["idt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"hwt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["hwt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"hst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["hst"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"hpt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["hpt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"hmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["hmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"hkt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["hkt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"hdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["hdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"gst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["gst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"gmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["gmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"gdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["gdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"fmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["fmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"ewt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47550,10 +45730,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["ept"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"emt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["emt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"eet", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["eet"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
@@ -47564,10 +45740,6 @@ defmodule DateTimeParser.Combinators do
 
   defp parse_datetime__854(<<"eat", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["eat"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"dmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["dmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"cwt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47582,10 +45754,6 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["cpt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"cmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["cmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"cet", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["cet"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
@@ -47598,32 +45766,8 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__855(rest, ["cat"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__854(<<"bst", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["bst"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"bmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["bmt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"bdt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["bdt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"awt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["awt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
   defp parse_datetime__854(<<"ast", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["ast"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"apt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["apt"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"amt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["amt"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"adt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47676,10 +45820,6 @@ defmodule DateTimeParser.Combinators do
 
   defp parse_datetime__854(<<"-01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["-01"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"-00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["-00"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(<<"+14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
@@ -47736,10 +45876,6 @@ defmodule DateTimeParser.Combinators do
 
   defp parse_datetime__854(<<"+01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
     parse_datetime__855(rest, ["+01"] ++ acc, stack, context, comb__line, comb__offset + 3)
-  end
-
-  defp parse_datetime__854(<<"+00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__855(rest, ["+00"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
   defp parse_datetime__854(rest, _acc, stack, context, line, offset) do
@@ -47826,24 +45962,34 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__863(rest, acc, [count - 1 | stack], context, line, offset)
   end
 
+  defp parse_datetime__865(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 47 do
+    [acc | stack] = stack
+    parse_datetime__857(rest, acc, stack, context, line, offset)
+  end
+
   defp parse_datetime__865(rest, acc, stack, context, line, offset) do
-    parse_datetime__866(rest, [], [acc | stack], context, line, offset)
+    parse_datetime__866(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__866(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__867(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__866(rest, acc, stack, context, line, offset) do
+    parse_datetime__867(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__866(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__867(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__867(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__868(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__867(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__867(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__868(rest, acc, stack, context, comb__line, comb__offset)
+  end
+
+  defp parse_datetime__868(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime__868(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime__869(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__868(
+  defp parse_datetime__869(
          <<x0, x1, rest::binary>>,
          acc,
          stack,
@@ -47852,17 +45998,17 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) do
-    parse_datetime__869(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime__870(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__868(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__869(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__869(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__870(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__869(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__870(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__870(
+    parse_datetime__871(
       rest,
       [utc_offset: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -47872,48 +46018,57 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__870(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime__871(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime__852(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__871(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+  defp parse_datetime__872(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
     parse_datetime__858(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime__872(rest, acc, stack, context, line, offset) do
-    parse_datetime__873(rest, [], [acc | stack], context, line, offset)
   end
 
   defp parse_datetime__873(rest, acc, stack, context, line, offset) do
     parse_datetime__874(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__874(<<"utc", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__875(rest, acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__874(rest, acc, stack, context, line, offset) do
+    parse_datetime__875(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__874(<<"gmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__875(rest, acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__875(<<"utc", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__876(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__874(<<"z", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__875(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__875(<<"gmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__876(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__874(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__875(<<"z", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__876(rest, acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__875(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime__871(rest, acc, stack, context, line, offset)
+    parse_datetime__872(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__875(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-    parse_datetime__876(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  defp parse_datetime__876(<<""::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__877("", acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__876(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__876(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime__872(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__877(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+    parse_datetime__878(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__878(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__877(
+    parse_datetime__879(
       rest,
       [
         zone_abbr:
@@ -47929,48 +46084,57 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__877(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime__879(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime__852(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__878(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime__872(rest, [], stack, context, line, offset)
+  defp parse_datetime__880(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime__873(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime__879(rest, acc, stack, context, line, offset) do
-    parse_datetime__880(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__881(rest, acc, stack, context, line, offset) do
+    parse_datetime__882(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__880(rest, acc, stack, context, line, offset) do
-    parse_datetime__881(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__882(rest, acc, stack, context, line, offset) do
+    parse_datetime__883(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__881(<<"utc", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__882(rest, acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__883(<<"utc", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__884(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__881(<<"gmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__882(rest, acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__883(<<"gmt", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__884(rest, acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__881(<<"z", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__882(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__883(<<"z", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__884(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__881(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__883(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime__878(rest, acc, stack, context, line, offset)
+    parse_datetime__880(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__882(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-    parse_datetime__883(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  defp parse_datetime__884(<<""::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__885("", acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__883(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__884(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime__880(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__885(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+    parse_datetime__886(rest, ["UTC"] ++ acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__886(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__884(
+    parse_datetime__887(
       rest,
       [
         zone_abbr:
@@ -47986,35 +46150,21 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__884(rest, acc, stack, context, line, offset) do
-    parse_datetime__885(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__885(<<"+", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__886(rest, ["+"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__885(<<"-", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__886(rest, ["-"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__885(rest, _acc, stack, context, line, offset) do
-    [acc | stack] = stack
-    parse_datetime__878(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__886(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime__887(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__886(rest, _acc, stack, context, line, offset) do
-    [acc | stack] = stack
-    parse_datetime__878(rest, acc, stack, context, line, offset)
-  end
-
   defp parse_datetime__887(rest, acc, stack, context, line, offset) do
-    parse_datetime__889(rest, acc, [1 | stack], context, line, offset)
+    parse_datetime__888(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__888(<<"+", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__889(rest, ["+"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__888(<<"-", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__889(rest, ["-"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__888(rest, _acc, stack, context, line, offset) do
+    [acc | stack] = stack
+    parse_datetime__880(rest, acc, stack, context, line, offset)
   end
 
   defp parse_datetime__889(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
@@ -48022,40 +46172,64 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__890(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__889(rest, acc, stack, context, line, offset) do
-    parse_datetime__888(rest, acc, stack, context, line, offset)
+  defp parse_datetime__889(rest, _acc, stack, context, line, offset) do
+    [acc | stack] = stack
+    parse_datetime__880(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__888(rest, acc, [_ | stack], context, line, offset) do
+  defp parse_datetime__890(rest, acc, stack, context, line, offset) do
+    parse_datetime__892(rest, acc, [1 | stack], context, line, offset)
+  end
+
+  defp parse_datetime__892(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime__893(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__892(rest, acc, stack, context, line, offset) do
     parse_datetime__891(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__890(rest, acc, [1 | stack], context, line, offset) do
-    parse_datetime__891(rest, acc, stack, context, line, offset)
+  defp parse_datetime__891(rest, acc, [_ | stack], context, line, offset) do
+    parse_datetime__894(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__890(rest, acc, [count | stack], context, line, offset) do
-    parse_datetime__889(rest, acc, [count - 1 | stack], context, line, offset)
+  defp parse_datetime__893(rest, acc, [1 | stack], context, line, offset) do
+    parse_datetime__894(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__891(rest, acc, stack, context, line, offset) do
-    parse_datetime__892(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__893(rest, acc, [count | stack], context, line, offset) do
+    parse_datetime__892(rest, acc, [count - 1 | stack], context, line, offset)
   end
 
-  defp parse_datetime__892(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__893(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__894(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 47 do
+    [acc | stack] = stack
+    parse_datetime__880(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__892(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__893(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__894(rest, acc, stack, context, line, offset) do
+    parse_datetime__895(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__893(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__895(rest, acc, stack, context, line, offset) do
+    parse_datetime__896(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__896(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__897(rest, acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__896(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__897(rest, acc, stack, context, comb__line, comb__offset)
+  end
+
+  defp parse_datetime__897(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime__894(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime__898(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__894(
+  defp parse_datetime__898(
          <<x0, x1, rest::binary>>,
          acc,
          stack,
@@ -48064,17 +46238,17 @@ defmodule DateTimeParser.Combinators do
          comb__offset
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) do
-    parse_datetime__895(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
+    parse_datetime__899(rest, [x1, x0] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__894(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__895(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__898(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__899(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__895(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__899(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__896(
+    parse_datetime__900(
       rest,
       [utc_offset: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -48084,7 +46258,7 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__896(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime__900(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime__852(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
@@ -48096,19 +46270,19 @@ defmodule DateTimeParser.Combinators do
     parse_datetime__11(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__897(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+  defp parse_datetime__901(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
     parse_datetime__393(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime__898(rest, acc, stack, context, line, offset) do
-    parse_datetime__899(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__902(rest, acc, stack, context, line, offset) do
+    parse_datetime__903(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__899(rest, acc, stack, context, line, offset) do
-    parse_datetime__900(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__903(rest, acc, stack, context, line, offset) do
+    parse_datetime__904(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"september", rest::binary>>,
          acc,
          stack,
@@ -48116,10 +46290,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["september"] ++ acc, stack, context, comb__line, comb__offset + 9)
+    parse_datetime__905(rest, ["september"] ++ acc, stack, context, comb__line, comb__offset + 9)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"november", rest::binary>>,
          acc,
          stack,
@@ -48127,10 +46301,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["november"] ++ acc, stack, context, comb__line, comb__offset + 8)
+    parse_datetime__905(rest, ["november"] ++ acc, stack, context, comb__line, comb__offset + 8)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"february", rest::binary>>,
          acc,
          stack,
@@ -48138,10 +46312,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["february"] ++ acc, stack, context, comb__line, comb__offset + 8)
+    parse_datetime__905(rest, ["february"] ++ acc, stack, context, comb__line, comb__offset + 8)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"december", rest::binary>>,
          acc,
          stack,
@@ -48149,10 +46323,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["december"] ++ acc, stack, context, comb__line, comb__offset + 8)
+    parse_datetime__905(rest, ["december"] ++ acc, stack, context, comb__line, comb__offset + 8)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"october", rest::binary>>,
          acc,
          stack,
@@ -48160,10 +46334,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["october"] ++ acc, stack, context, comb__line, comb__offset + 7)
+    parse_datetime__905(rest, ["october"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"january", rest::binary>>,
          acc,
          stack,
@@ -48171,10 +46345,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["january"] ++ acc, stack, context, comb__line, comb__offset + 7)
+    parse_datetime__905(rest, ["january"] ++ acc, stack, context, comb__line, comb__offset + 7)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"august", rest::binary>>,
          acc,
          stack,
@@ -48182,10 +46356,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["august"] ++ acc, stack, context, comb__line, comb__offset + 6)
+    parse_datetime__905(rest, ["august"] ++ acc, stack, context, comb__line, comb__offset + 6)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"march", rest::binary>>,
          acc,
          stack,
@@ -48193,10 +46367,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["march"] ++ acc, stack, context, comb__line, comb__offset + 5)
+    parse_datetime__905(rest, ["march"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"april", rest::binary>>,
          acc,
          stack,
@@ -48204,10 +46378,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["april"] ++ acc, stack, context, comb__line, comb__offset + 5)
+    parse_datetime__905(rest, ["april"] ++ acc, stack, context, comb__line, comb__offset + 5)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"sept", rest::binary>>,
          acc,
          stack,
@@ -48215,10 +46389,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["sept"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime__905(rest, ["sept"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"june", rest::binary>>,
          acc,
          stack,
@@ -48226,10 +46400,10 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["june"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime__905(rest, ["june"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__900(
+  defp parse_datetime__904(
          <<"july", rest::binary>>,
          acc,
          stack,
@@ -48237,83 +46411,83 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__901(rest, ["july"] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime__905(rest, ["july"] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__900(<<"sep", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["sep"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"sep", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["sep"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"oct", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["oct"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"oct", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["oct"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"nov", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["nov"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"nov", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["nov"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"may", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["may"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"may", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["may"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"mar", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["mar"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"mar", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["mar"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"jun", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["jun"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"jun", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["jun"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"jul", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["jul"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"jul", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["jul"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"jan", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["jan"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"jan", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["jan"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"feb", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["feb"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"feb", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["feb"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"dec", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["dec"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"dec", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["dec"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"aug", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["aug"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"aug", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["aug"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(<<"apr", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__901(rest, ["apr"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__904(<<"apr", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__905(rest, ["apr"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__900(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__904(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__901(rest, acc, stack, context, line, offset) do
-    parse_datetime__902(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__905(rest, acc, stack, context, line, offset) do
+    parse_datetime__906(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__902(<<".", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__903(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__906(<<".", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__907(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__902(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__903(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__906(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__907(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__903(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__907(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime__904(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime__908(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__904(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__908(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__905(
+    parse_datetime__909(
       rest,
       Enum.map(user_acc, fn var -> vocal_month_to_numeric_month(var) end) ++ acc,
       stack,
@@ -48323,10 +46497,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__905(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__909(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__906(
+    parse_datetime__910(
       rest,
       [
         month:
@@ -48342,24 +46516,24 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__906(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__907(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__910(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__911(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__906(rest, acc, stack, context, line, offset) do
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+  defp parse_datetime__910(rest, acc, stack, context, line, offset) do
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__907(rest, acc, stack, context, line, offset) do
-    parse_datetime__908(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__911(rest, acc, stack, context, line, offset) do
+    parse_datetime__912(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__908(rest, acc, stack, context, line, offset) do
-    parse_datetime__909(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__912(rest, acc, stack, context, line, offset) do
+    parse_datetime__913(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__909(rest, acc, stack, context, line, offset) do
-    parse_datetime__915(
+  defp parse_datetime__913(rest, acc, stack, context, line, offset) do
+    parse_datetime__919(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -48369,201 +46543,201 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__911(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__912(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__915(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__916(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__911(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__915(rest, _acc, stack, context, line, offset) do
     [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__912(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime__916(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 48 and x0 <= 57 do
     [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__912(rest, acc, stack, context, line, offset) do
-    parse_datetime__913(rest, acc, stack, context, line, offset)
+  defp parse_datetime__916(rest, acc, stack, context, line, offset) do
+    parse_datetime__917(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__913(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__910(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__917(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__914(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__914(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime__911(rest, [], stack, context, line, offset)
+  defp parse_datetime__918(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime__915(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime__915(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__916(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__919(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__920(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__915(rest, acc, stack, context, line, offset) do
-    parse_datetime__914(rest, acc, stack, context, line, offset)
+  defp parse_datetime__919(rest, acc, stack, context, line, offset) do
+    parse_datetime__918(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__916(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__910(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__920(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__914(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__910(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__914(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__917(
+    parse_datetime__921(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -48573,10 +46747,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__917(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__921(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__918(
+    parse_datetime__922(
       rest,
       [
         day:
@@ -48592,16 +46766,16 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__918(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__919(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__922(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__923(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__918(rest, acc, stack, context, line, offset) do
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+  defp parse_datetime__922(rest, acc, stack, context, line, offset) do
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__919(rest, acc, stack, context, line, offset) do
-    parse_datetime__937(
+  defp parse_datetime__923(rest, acc, stack, context, line, offset) do
+    parse_datetime__941(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -48611,513 +46785,169 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__921(rest, acc, stack, context, line, offset) do
-    parse_datetime__922(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__925(rest, acc, stack, context, line, offset) do
+    parse_datetime__926(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__922(rest, acc, stack, context, line, offset) do
-    parse_datetime__923(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__926(rest, acc, stack, context, line, offset) do
+    parse_datetime__927(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__923(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__927(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__923(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__923(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__924(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__923(rest, _acc, stack, context, line, offset) do
-    [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__924(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__924(rest, acc, stack, context, line, offset) do
-    parse_datetime__925(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__925(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime__926(
-      rest,
-      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime__926(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime__927(
-      rest,
-      [
-        hour:
-          case :lists.reverse(user_acc) do
-            [one] -> one
-            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
-          end
-      ] ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime__927(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__928(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__927(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__928(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
   defp parse_datetime__927(rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+    [_, _, _, acc | stack] = stack
+    parse_datetime__901(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__928(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, _, _, acc | stack] = stack
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
   defp parse_datetime__928(rest, acc, stack, context, line, offset) do
-    parse_datetime__929(rest, [], [acc | stack], context, line, offset)
+    parse_datetime__929(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__929(rest, acc, stack, context, line, offset) do
-    parse_datetime__930(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__930(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__930(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__931(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__930(rest, _acc, stack, context, line, offset) do
-    [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__931(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, _, _, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__931(rest, acc, stack, context, line, offset) do
-    parse_datetime__932(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__932(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__929(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__933(
+    parse_datetime__930(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -49127,218 +46957,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__933(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__930(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__934(
-      rest,
-      [
-        minute:
-          case :lists.reverse(user_acc) do
-            [one] -> one
-            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
-          end
-      ] ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime__934(<<":", _::binary>> = rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime__897(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__934(rest, acc, stack, context, line, offset) do
-    parse_datetime__935(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__935(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__920(rest, acc ++ previous_acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__936(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime__921(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime__937(rest, acc, stack, context, line, offset) do
-    parse_datetime__938(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__938(rest, acc, stack, context, line, offset) do
-    parse_datetime__939(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__939(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__939(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__940(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__939(rest, _acc, stack, context, line, offset) do
-    [_, acc | stack] = stack
-    parse_datetime__936(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__940(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 >= 54 and x0 <= 57 do
-    [_, acc | stack] = stack
-    parse_datetime__936(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__940(rest, acc, stack, context, line, offset) do
-    parse_datetime__941(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__941(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime__942(
-      rest,
-      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
-      stack,
-      context,
-      line,
-      offset
-    )
-  end
-
-  defp parse_datetime__942(rest, user_acc, [acc | stack], context, line, offset) do
-    _ = user_acc
-
-    parse_datetime__943(
+    parse_datetime__931(
       rest,
       [
         hour:
@@ -49354,321 +46976,322 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__943(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__944(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__931(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__932(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__943(rest, acc, stack, context, line, offset) do
-    parse_datetime__936(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__944(rest, acc, stack, context, line, offset) do
-    parse_datetime__945(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__945(rest, acc, stack, context, line, offset) do
-    parse_datetime__946(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__946(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__946(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__947(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__946(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__931(rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime__936(rest, acc, stack, context, line, offset)
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__947(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime__932(rest, acc, stack, context, line, offset) do
+    parse_datetime__933(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__933(rest, acc, stack, context, line, offset) do
+    parse_datetime__934(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__934(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__934(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__935(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__934(rest, _acc, stack, context, line, offset) do
+    [_, _, _, acc | stack] = stack
+    parse_datetime__901(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__935(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 54 and x0 <= 57 do
-    [_, acc | stack] = stack
+    [_, _, _, acc | stack] = stack
+    parse_datetime__901(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__935(rest, acc, stack, context, line, offset) do
     parse_datetime__936(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__947(rest, acc, stack, context, line, offset) do
-    parse_datetime__948(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__948(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__936(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__949(
+    parse_datetime__937(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -49678,10 +47301,10 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__949(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__937(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__950(
+    parse_datetime__938(
       rest,
       [
         minute:
@@ -49697,321 +47320,186 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__950(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__951(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__950(rest, acc, stack, context, line, offset) do
-    parse_datetime__936(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__951(rest, acc, stack, context, line, offset) do
-    parse_datetime__952(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__952(rest, acc, stack, context, line, offset) do
-    parse_datetime__953(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__953(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
-  end
-
-  defp parse_datetime__953(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__954(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__953(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__938(<<":", _::binary>> = rest, _acc, stack, context, line, offset) do
     [_, acc | stack] = stack
-    parse_datetime__936(rest, acc, stack, context, line, offset)
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__954(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+  defp parse_datetime__938(rest, acc, stack, context, line, offset) do
+    parse_datetime__939(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__939(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__924(rest, acc ++ previous_acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__940(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime__925(rest, [], stack, context, line, offset)
+  end
+
+  defp parse_datetime__941(rest, acc, stack, context, line, offset) do
+    parse_datetime__942(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__942(rest, acc, stack, context, line, offset) do
+    parse_datetime__943(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__943(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__943(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__944(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__943(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__944(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
        when x0 >= 54 and x0 <= 57 do
     [_, acc | stack] = stack
-    parse_datetime__936(rest, acc, stack, context, line, offset)
+    parse_datetime__940(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__954(rest, acc, stack, context, line, offset) do
-    parse_datetime__955(rest, acc, stack, context, line, offset)
+  defp parse_datetime__944(rest, acc, stack, context, line, offset) do
+    parse_datetime__945(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__955(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__945(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__956(
+    parse_datetime__946(
       rest,
       Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
       stack,
@@ -50021,10 +47509,696 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__956(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__946(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__957(
+    parse_datetime__947(
+      rest,
+      [
+        hour:
+          case :lists.reverse(user_acc) do
+            [one] -> one
+            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
+          end
+      ] ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime__947(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__948(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__947(rest, acc, stack, context, line, offset) do
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__948(rest, acc, stack, context, line, offset) do
+    parse_datetime__949(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__949(rest, acc, stack, context, line, offset) do
+    parse_datetime__950(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__950(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__950(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__951(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__950(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__951(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, acc | stack] = stack
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__951(rest, acc, stack, context, line, offset) do
+    parse_datetime__952(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__952(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime__953(
+      rest,
+      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime__953(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime__954(
+      rest,
+      [
+        minute:
+          case :lists.reverse(user_acc) do
+            [one] -> one
+            many -> raise "unwrap_and_tag/3 expected a single token, got: #{inspect(many)}"
+          end
+      ] ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime__954(<<":", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__955(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__954(rest, acc, stack, context, line, offset) do
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__955(rest, acc, stack, context, line, offset) do
+    parse_datetime__956(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__956(rest, acc, stack, context, line, offset) do
+    parse_datetime__957(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__957(<<"00", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["00"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"01", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["01"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"02", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["02"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"03", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["03"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"04", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["04"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"05", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["05"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"06", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["06"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"07", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["07"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"08", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["08"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"09", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["09"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"59", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["59"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"58", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["58"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"57", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["57"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"56", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["56"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"55", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["55"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"54", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["54"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"53", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["53"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"52", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["52"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"51", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["51"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"50", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["50"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"49", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["49"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"48", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["48"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"47", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["47"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"46", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["46"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"45", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["45"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"44", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["44"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"43", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["43"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"42", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["42"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"41", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["41"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"40", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["40"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"39", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["39"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"38", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["38"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"37", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["37"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"36", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["36"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"35", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["35"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"34", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["34"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"33", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["33"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"32", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["32"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"31", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["31"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"30", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["30"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"29", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["29"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"28", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["28"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"27", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["27"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"26", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["26"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"25", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["25"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"24", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["24"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"23", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["23"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"22", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["22"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"21", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["21"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"20", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["20"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"19", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["19"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"18", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["18"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"17", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["17"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"16", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["16"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"15", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["15"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"14", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["14"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"13", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["13"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"12", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["12"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"11", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["11"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"10", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["10"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  end
+
+  defp parse_datetime__957(<<"9", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["9"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"8", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["8"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"7", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["7"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"6", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["6"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"5", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["5"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"4", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["4"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"3", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["3"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"2", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["2"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"1", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["1"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(<<"0", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__958(rest, ["0"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__957(rest, _acc, stack, context, line, offset) do
+    [_, acc | stack] = stack
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__958(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 >= 54 and x0 <= 57 do
+    [_, acc | stack] = stack
+    parse_datetime__940(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__958(rest, acc, stack, context, line, offset) do
+    parse_datetime__959(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__959(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime__960(
+      rest,
+      Enum.map(user_acc, fn var -> to_integer(var) end) ++ acc,
+      stack,
+      context,
+      line,
+      offset
+    )
+  end
+
+  defp parse_datetime__960(rest, user_acc, [acc | stack], context, line, offset) do
+    _ = user_acc
+
+    parse_datetime__961(
       rest,
       [
         second:
@@ -50040,16 +48214,16 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__957(<<".", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__958(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__961(<<".", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__962(rest, [] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__957(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__958(rest, [] ++ acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__961(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__962(rest, [] ++ acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__958(rest, acc, stack, context, line, offset) do
-    parse_datetime__962(
+  defp parse_datetime__962(rest, acc, stack, context, line, offset) do
+    parse_datetime__966(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -50059,57 +48233,57 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__960(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__959(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__964(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__963(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__961(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime__960(rest, [], stack, context, line, offset)
-  end
-
-  defp parse_datetime__962(rest, acc, stack, context, line, offset) do
-    parse_datetime__963(rest, [], [acc | stack], context, line, offset)
-  end
-
-  defp parse_datetime__963(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime__964(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
-  end
-
-  defp parse_datetime__963(rest, _acc, stack, context, line, offset) do
-    [acc | stack] = stack
-    parse_datetime__961(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__964(rest, acc, stack, context, line, offset) do
-    parse_datetime__966(rest, acc, [23 | stack], context, line, offset)
-  end
-
-  defp parse_datetime__966(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
-       when x0 >= 48 and x0 <= 57 do
-    parse_datetime__967(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__965(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime__964(rest, [], stack, context, line, offset)
   end
 
   defp parse_datetime__966(rest, acc, stack, context, line, offset) do
+    parse_datetime__967(rest, [], [acc | stack], context, line, offset)
+  end
+
+  defp parse_datetime__967(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime__968(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
+  end
+
+  defp parse_datetime__967(rest, _acc, stack, context, line, offset) do
+    [acc | stack] = stack
     parse_datetime__965(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__965(rest, acc, [_ | stack], context, line, offset) do
-    parse_datetime__968(rest, acc, stack, context, line, offset)
+  defp parse_datetime__968(rest, acc, stack, context, line, offset) do
+    parse_datetime__970(rest, acc, [23 | stack], context, line, offset)
   end
 
-  defp parse_datetime__967(rest, acc, [1 | stack], context, line, offset) do
-    parse_datetime__968(rest, acc, stack, context, line, offset)
+  defp parse_datetime__970(<<x0, rest::binary>>, acc, stack, context, comb__line, comb__offset)
+       when x0 >= 48 and x0 <= 57 do
+    parse_datetime__971(rest, [x0] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__967(rest, acc, [count | stack], context, line, offset) do
-    parse_datetime__966(rest, acc, [count - 1 | stack], context, line, offset)
+  defp parse_datetime__970(rest, acc, stack, context, line, offset) do
+    parse_datetime__969(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__968(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__969(rest, acc, [_ | stack], context, line, offset) do
+    parse_datetime__972(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__971(rest, acc, [1 | stack], context, line, offset) do
+    parse_datetime__972(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__971(rest, acc, [count | stack], context, line, offset) do
+    parse_datetime__970(rest, acc, [count - 1 | stack], context, line, offset)
+  end
+
+  defp parse_datetime__972(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__969(
+    parse_datetime__973(
       rest,
       [microsecond: :lists.reverse(user_acc)] ++ acc,
       stack,
@@ -50119,33 +48293,33 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__969(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__959(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__973(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__963(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__959(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__920(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__963(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__924(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__920(rest, acc, stack, context, line, offset) do
-    parse_datetime__970(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__924(rest, acc, stack, context, line, offset) do
+    parse_datetime__974(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__970(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__971(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__974(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__975(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__970(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__971(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__974(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__975(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__971(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__975(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime__972(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime__976(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__972(rest, acc, stack, context, line, offset) do
-    parse_datetime__976(
+  defp parse_datetime__976(rest, acc, stack, context, line, offset) do
+    parse_datetime__980(
       rest,
       [],
       [{rest, context, line, offset}, acc | stack],
@@ -50155,27 +48329,27 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__974(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__973(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__978(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__977(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__975(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
-    parse_datetime__974(rest, [], stack, context, line, offset)
+  defp parse_datetime__979(_, _, [{rest, context, line, offset} | _] = stack, _, _, _) do
+    parse_datetime__978(rest, [], stack, context, line, offset)
   end
 
-  defp parse_datetime__976(rest, acc, stack, context, line, offset) do
-    parse_datetime__977(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__980(rest, acc, stack, context, line, offset) do
+    parse_datetime__981(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__977(<<"am", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["am"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__981(<<"am", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["am"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__977(<<"a.m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["a.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__981(<<"a.m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["a.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__977(
+  defp parse_datetime__981(
          <<"a.m.", rest::binary>>,
          acc,
          stack,
@@ -50183,22 +48357,22 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__978(rest, ["a.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime__982(rest, ["a.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__977(<<"a_m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["a_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__981(<<"a_m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["a_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__977(<<"pm", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["pm"] ++ acc, stack, context, comb__line, comb__offset + 2)
+  defp parse_datetime__981(<<"pm", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["pm"] ++ acc, stack, context, comb__line, comb__offset + 2)
   end
 
-  defp parse_datetime__977(<<"p.m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["p.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__981(<<"p.m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["p.m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__977(
+  defp parse_datetime__981(
          <<"p.m.", rest::binary>>,
          acc,
          stack,
@@ -50206,44 +48380,44 @@ defmodule DateTimeParser.Combinators do
          comb__line,
          comb__offset
        ) do
-    parse_datetime__978(rest, ["p.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
+    parse_datetime__982(rest, ["p.m."] ++ acc, stack, context, comb__line, comb__offset + 4)
   end
 
-  defp parse_datetime__977(<<"p_m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["p_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
+  defp parse_datetime__981(<<"p_m", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["p_m"] ++ acc, stack, context, comb__line, comb__offset + 3)
   end
 
-  defp parse_datetime__977(<<"a", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["a"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__981(<<"a", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["a"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__977(<<"p", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__978(rest, ["p"] ++ acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__981(<<"p", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__982(rest, ["p"] ++ acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__977(rest, _acc, stack, context, line, offset) do
+  defp parse_datetime__981(rest, _acc, stack, context, line, offset) do
     [acc | stack] = stack
-    parse_datetime__975(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__978(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 101 or x0 === 109 or x0 === 100 or
-              x0 === 105 or
-              x0 === 97 or x0 === 98 or x0 === 106 or x0 === 112 or x0 === 108 or x0 === 107 or
-              x0 === 122 or
-              x0 === 102 or x0 === 104 or x0 === 119 or x0 === 99 or x0 === 116 do
-    [acc | stack] = stack
-    parse_datetime__975(rest, acc, stack, context, line, offset)
-  end
-
-  defp parse_datetime__978(rest, acc, stack, context, line, offset) do
     parse_datetime__979(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__979(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__982(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
+       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 109 or x0 === 105 or x0 === 101 or
+              x0 === 97 or
+              x0 === 107 or x0 === 122 or x0 === 100 or x0 === 104 or x0 === 119 or x0 === 99 or
+              x0 === 116 or
+              x0 === 112 do
+    [acc | stack] = stack
+    parse_datetime__979(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__982(rest, acc, stack, context, line, offset) do
+    parse_datetime__983(rest, acc, stack, context, line, offset)
+  end
+
+  defp parse_datetime__983(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
 
-    parse_datetime__980(
+    parse_datetime__984(
       rest,
       [
         am_pm:
@@ -50259,28 +48433,28 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__980(rest, acc, [_, previous_acc | stack], context, line, offset) do
-    parse_datetime__973(rest, acc ++ previous_acc, stack, context, line, offset)
+  defp parse_datetime__984(rest, acc, [_, previous_acc | stack], context, line, offset) do
+    parse_datetime__977(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__973(rest, acc, stack, context, line, offset) do
-    parse_datetime__981(rest, [], [acc | stack], context, line, offset)
+  defp parse_datetime__977(rest, acc, stack, context, line, offset) do
+    parse_datetime__985(rest, [], [acc | stack], context, line, offset)
   end
 
-  defp parse_datetime__981(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__982(rest, acc, stack, context, comb__line, comb__offset + 1)
+  defp parse_datetime__985(<<" ", rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__986(rest, acc, stack, context, comb__line, comb__offset + 1)
   end
 
-  defp parse_datetime__981(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
-    parse_datetime__982(rest, acc, stack, context, comb__line, comb__offset)
+  defp parse_datetime__985(<<rest::binary>>, acc, stack, context, comb__line, comb__offset) do
+    parse_datetime__986(rest, acc, stack, context, comb__line, comb__offset)
   end
 
-  defp parse_datetime__982(rest, user_acc, [acc | stack], context, line, offset) do
+  defp parse_datetime__986(rest, user_acc, [acc | stack], context, line, offset) do
     _ = user_acc
-    parse_datetime__983(rest, [] ++ acc, stack, context, line, offset)
+    parse_datetime__987(rest, [] ++ acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__983(
+  defp parse_datetime__987(
          <<x0, x1, x2, x3, rest::binary>>,
          acc,
          stack,
@@ -50290,7 +48464,7 @@ defmodule DateTimeParser.Combinators do
        )
        when x0 >= 48 and x0 <= 57 and (x1 >= 48 and x1 <= 57) and (x2 >= 48 and x2 <= 57) and
               (x3 >= 48 and x3 <= 57) do
-    parse_datetime__984(
+    parse_datetime__988(
       rest,
       [year: [x0, x1, x2, x3]] ++ acc,
       stack,
@@ -50300,11 +48474,11 @@ defmodule DateTimeParser.Combinators do
     )
   end
 
-  defp parse_datetime__983(rest, acc, stack, context, line, offset) do
-    parse_datetime__897(rest, acc, stack, context, line, offset)
+  defp parse_datetime__987(rest, acc, stack, context, line, offset) do
+    parse_datetime__901(rest, acc, stack, context, line, offset)
   end
 
-  defp parse_datetime__984(rest, acc, [_, previous_acc | stack], context, line, offset) do
+  defp parse_datetime__988(rest, acc, [_, previous_acc | stack], context, line, offset) do
     parse_datetime__11(rest, acc ++ previous_acc, stack, context, line, offset)
   end
 
@@ -63431,11 +61605,11 @@ defmodule DateTimeParser.Combinators do
   end
 
   defp parse_time__59(<<x0, _::binary>> = rest, _acc, stack, context, line, offset)
-       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 101 or x0 === 109 or x0 === 100 or
-              x0 === 105 or
-              x0 === 97 or x0 === 98 or x0 === 106 or x0 === 112 or x0 === 108 or x0 === 107 or
-              x0 === 122 or
-              x0 === 102 or x0 === 104 or x0 === 119 or x0 === 99 or x0 === 116 do
+       when x0 === 49 or x0 === 48 or x0 === 115 or x0 === 109 or x0 === 105 or x0 === 101 or
+              x0 === 97 or
+              x0 === 107 or x0 === 122 or x0 === 100 or x0 === 104 or x0 === 119 or x0 === 99 or
+              x0 === 116 or
+              x0 === 112 do
     [acc | stack] = stack
     parse_time__56(rest, acc, stack, context, line, offset)
   end

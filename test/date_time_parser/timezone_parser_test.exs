@@ -59,7 +59,7 @@ defmodule DateTimeParser.TimezoneParserTest do
       Rule	NYC	1955	1966	-	Oct	lastSun	2:00	0	S
       """
 
-      [rule1, rule2, rule3 | _rest] = TimezoneParser.parse(sample) |> elem(1)
+      {[], [rule1, rule2, rule3 | _rest]} = TimezoneParser.parse(sample)
 
       # Rule	NYC	1920	only	-	Mar	lastSun	2:00	1:00	D
       assert rule1.name == "NYC"

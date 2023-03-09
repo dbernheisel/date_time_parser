@@ -711,6 +711,20 @@ defmodule DateTimeParserTest do
     end
   end
 
+  describe "timezones abbreviations" do
+    for abbr <- Enum.sort(DateTimeParser.TimezoneAbbreviations.all_abbreviations()) do
+      @abbr abbr
+
+      test "can parse abbreviation #{@abbr}" do
+        abbr = @abbr
+        %{name: zone} = DateTimeParser.TimezoneAbbreviations.zone_by_abbreviation(abbr)
+
+        assert %DateTime{time_zone: ^zone} =
+                 DateTimeParser.parse_datetime!("2023-03-11 10:00:00 #{abbr}")
+      end
+    end
+  end
+
   describe "errors" do
     test "returns an error when not recognized" do
       assert DateTimeParser.parse_datetime("2017-24-32 16:09:53 UTC") ==

@@ -15,7 +15,7 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "+0300" => "Etc/GMT-3",
     "+0400" => "Etc/GMT-4",
     "+0500" => "Etc/GMT-5",
-    "+0530" => "Asia/Kolkata",
+    "+0530" => "Asia/Colombo",
     "+0600" => "Etc/GMT-6",
     "+0700" => "Etc/GMT-7",
     "+0800" => "Etc/GMT-8",
@@ -32,6 +32,7 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "-0300" => "Etc/GMT+3",
     "-0400" => "Etc/GMT+4",
     "-0500" => "Etc/GMT+5",
+    "-0530" => "America/Belize",
     "-0600" => "Etc/GMT+6",
     "-0700" => "Etc/GMT+7",
     "-0800" => "Etc/GMT+8",
@@ -55,17 +56,22 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "+09" => "Etc/GMT-9",
     "+10" => "Etc/GMT-10",
     "+11" => "Etc/GMT-11",
+    "+1130" => "Pacific/Norfolk",
     "+11/+12" => "Pacific/Noumea",
     "+12" => "Etc/GMT-12",
+    "+1215" => "Pacific/Chatham",
+    "+12/+13" => "Pacific/Fiji",
     "+13" => "Etc/GMT-13",
     "+13/+14" => "Pacific/Tongatapu",
     "+14" => "Etc/GMT-14",
     "-01" => "Etc/GMT+1",
     "-01/+00" => "Atlantic/Azores",
     "-02" => "Etc/GMT+2",
+    "-02/-01" => "Europe/Lisbon",
     "-03" => "Etc/GMT+3",
     "-03/-02" => "America/Buenos_Aires",
     "-04" => "Etc/GMT+4",
+    "-0430" => "America/Caracas",
     "-04/-03" => "America/Santiago",
     "-05" => "Etc/GMT+5",
     "-05/-04" => "America/Bogota",
@@ -80,31 +86,56 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "ACT" => "Australia/Adelaide",
     "ACDT" => "Australia/Adelaide",
     "ACST" => "Australia/Adelaide",
+    "CAST" => "Australia/Adelaide",
     "AET" => "Australia/Sydney",
     "AEST" => "Australia/Sydney",
     "AEDT" => "Australia/Sydney",
     "LHDT" => "Australia/Lord_Howe",
+    "NZMT" => "Pacific/Auckland",
+    "NZDT" => "Pacific/Auckland",
+    "HMT" => "Etc/GMT+5",
+    "PMMT" => "Pacific/Bougainville",
     # Americas
+    "EMT" => "Pacific/Easter",
+    "QMT" => "America/Guayaquil",
+    "NDDT" => "Canada/Newfoundland",
+    "NWT" => "Canada/Newfoundland",
     "ADT" => "America/Halifax",
+    "AWT" => "America/Halifax",
+    "ADDT" => "America/Goose_Bay",
+    "PPMT" => "America/Port-au-Prince",
     "ALASKA" => "America/New_York",
+    "AST" => "Canada/Atlantic",
+    "APT" => "Canada/Atlantic",
+    "YDT" => "Canada/Yukon",
+    "YST" => "Canada/Yukon",
+    "YDDT" => "Canada/Yukon",
+    "CHST" => "Pacific/Guam",
+    "AHST" => "America/Anchorage",
+    "AHDT" => "America/Anchorage",
+    "YWT" => "Canada/Yukon",
+    "YPT" => "Canada/Yukon",
     "AKDT" => "America/Anchorage",
     "AKST" => "America/Anchorage",
-    "AST" => "America/Puerto_Rico",
     "CENTRAL" => "America/Chicago",
     "CDT" => "America/Chicago",
+    "SJMT" => "America/Costa_Rica",
     "CST" => "America/Chicago",
     "CT" => "America/Chicago",
     "CWT" => "America/Belize",
     "CPT" => "America/Belize",
+    "CMT" => "America/Buenos_Aires",
     "EASTERN" => "America/New_York",
     "EDT" => "America/New_York",
     "EST" => "America/New_York",
     "ET" => "America/New_York",
     "HAWAII" => "America/New_York",
     "HST" => "Pacific/Honolulu",
+    "HPT" => "Pacific/Honolulu",
     "HAT" => "Pacific/Honolulu",
     "HADT" => "Pacific/Honolulu",
     "HAST" => "Pacific/Honolulu",
+    "HWT" => "Pacific/Honolulu",
     "MOUNTAIN" => "America/New_York",
     "MDT" => "America/Denver",
     "MST" => "America/Denver",
@@ -112,15 +143,27 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "PACIFIC" => "America/New_York",
     "PDT" => "America/Los_Angeles",
     "PST" => "America/Los_Angeles",
+    "SDMT" => "America/Santo_Domingo",
     "PT" => "America/Los_Angeles",
+    "FFMT" => "America/Martinique",
     # Europe
     "BT/BST" => "Europe/London",
     "BMT/BST" => "Europe/London",
+    "GMT/BST" => "Europe/London",
+    "WMT" => "Europe/Warsaw",
+    "AMT" => "Asia/Yerevan",
+    "PMT" => "Europe/Paris",
+    "LST" => "Europe/Riga",
     "BMT" => "Europe/London",
     "BST" => "Europe/London",
+    "BDST" => "Europe/London",
     "BT" => "Europe/London",
+    "DMT" => "Europe/Dublin",
+    "RMT" => "Europe/Rome",
+    "IMT" => "Europe/Istanbul",
     "CET/CEST" => "CET",
     "CEST" => "CET",
+    "CEMT" => "Europe/Berlin",
     "CET" => "CET",
     "EET/EEST" => "EET",
     "EEST" => "EET",
@@ -128,18 +171,31 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     "WET/WEST" => "WET",
     "WEST" => "WET",
     "WET" => "WET",
+    "WEMT" => "WET",
     "GMT" => "Etc/UTC",
-    "UTC" => "Etc/UTC",
-    "Z" => "Etc/UTC",
+    "GMT/IST" => "Etc/UTC",
     # Africa
     "WAT" => "Africa/Lagos",
+    "WAST" => "Africa/Lagos",
     "CAT" => "Africa/Maputo",
     # Asia
+    "JMT" => "Asia/Jerusalem",
+    "MMT" => "Asia/Yangon",
+    "NPT" => "Asia/Katmandu",
+    "PLMT" => "Asia/Ho_Chi_Minh",
+    "MSK/MSD" => "Europe/Moscow",
+    "FMT" => "Atlantic/Madeira",
+    "MSDT" => "Europe/Moscow",
+    "MDST" => "Europe/Moscow",
     "MSK" => "Europe/Moscow",
     "MSD" => "Europe/Moscow",
+    "GST" => "Asia/Dubai",
     "IST" => "Asia/Kolkata",
     "KST" => "Asia/Seoul",
-    "WIB" => "Asia/Jakarta"
+    "WIB" => "Asia/Jakarta",
+    "TBMT" => "Asia/Tbilisi",
+    "HKT" => "Asia/Hong_Kong",
+    "HKWT" => "Asia/Hong_Kong"
   }
 
   def rules, do: @rules
@@ -160,28 +216,6 @@ defmodule DateTimeParser.TimezoneAbbreviations do
     end)
   end
 
-  def zone_by_abbreviation(abbreviation, opts \\ [])
-
-  def zone_by_abbreviation(abbreviation, opts) do
-    tz_preferences =
-      Map.merge(
-        @default_abbreviation_preferences,
-        Keyword.get(opts, :assume_tz_abbreviations, %{})
-      )
-
-    with [_ | _] <- zones_by_abbreviation(abbreviation, opts),
-         [one] <- zones_by_name(tz_preferences[abbreviation]) do
-      one
-    else
-      empty when empty == [] or is_nil(empty) ->
-        name = tz_preferences[abbreviation] || abbreviation
-        name |> zones_by_name(opts) |> List.first()
-
-      [one] ->
-        one
-    end
-  end
-
   def zones_by_offset(offset, opts \\ [])
 
   def zones_by_offset(offset, opts) do
@@ -199,17 +233,23 @@ defmodule DateTimeParser.TimezoneAbbreviations do
   def zone_by_offset(offset, opts) do
     offset = normalize_offset(offset)
 
-    case zones_by_offset(offset, opts) do
-      [one] ->
-        one
+    Enum.find_value(
+      [
+        fn -> zones_by_offset(offset, opts) end,
+        fn ->
+          offset_preferences =
+            Map.merge(@default_offset_preferences, Keyword.get(opts, :assume_tz_offsets, %{}))
 
-      many when is_list(many) ->
-        offset_preferences =
-          Map.merge(@default_offset_preferences, Keyword.get(opts, :assume_tz_offsets, %{}))
-
-        name = offset_preferences[offset] || offset
-        name |> zones_by_name(opts) |> List.first()
-    end
+          zones_by_name(offset_preferences[offset] || offset, opts)
+        end
+      ],
+      fn fun ->
+        case fun.() do
+          [zone] -> zone
+          _ -> false
+        end
+      end
+    )
   end
 
   defp normalize_offset("-" <> offset),
@@ -218,11 +258,37 @@ defmodule DateTimeParser.TimezoneAbbreviations do
   defp normalize_offset("+" <> offset),
     do: "+" <> String.pad_trailing(String.trim(offset, " "), 4, "0")
 
-  def all_abbreviations do
-    zones()
-    |> Enum.flat_map(fn zone -> zone.abbreviations end)
+  # Antartica/Troll has an abbreviation of +00 which confuses things for UTC
+  def all_abbreviations(ndt \\ NaiveDateTime.utc_now()) do
+    ndt
+    |> zones()
+    |> Enum.flat_map(fn zone -> Enum.reject(zone.abbreviations, &(&1 == "+00")) end)
     |> Enum.uniq()
-    |> Enum.sort_by(&{byte_size(&1), &1}, :desc)
+  end
+
+  def zone_by_abbreviation(abbreviation, opts \\ [])
+
+  def zone_by_abbreviation(abbreviation, opts) do
+    Enum.find_value(
+      [
+        fn -> zones_by_abbreviation(abbreviation, opts) end,
+        fn ->
+          tz_preferences =
+            Map.merge(
+              @default_abbreviation_preferences,
+              Keyword.get(opts, :assume_tz_abbreviations, %{})
+            )
+
+          zones_by_name(tz_preferences[abbreviation] || abbreviation, opts)
+        end
+      ],
+      fn fun ->
+        case fun.() do
+          [zone] -> zone
+          _ -> false
+        end
+      end
+    )
   end
 
   def zones_by_abbreviation(abbreviation, opts \\ []) do
