@@ -158,6 +158,10 @@ config :date_time_parser, parsers: [Parser.Epoch, Parser.Serial, Parser.Tokenize
 # To enable only specific parsers, include them in the :parsers key.
 config :date_time_parser, parsers: [Parser.Tokenizer]
 
+# To consider more timezones from the past at a performance cost:
+config :date_time_parser, include_zones_from: ~N[1900-01-01T00:00:00]
+# default is 2020-01-01T00:00:00
+
 # Adding the timezone database from Tz
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 

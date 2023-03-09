@@ -4,8 +4,17 @@ defmodule DateTimeParser.TimezoneAbbreviations do
   to power parsing strings with timezone abbreviations and offsets in them.
   """
 
+  @beginning_at Application.compile_env(
+                  :date_time_parser,
+                  :include_zones_from,
+                  ~N[2020-01-01 00:00:00]
+                )
   {zones, rules} = DateTimeParser.TimezoneParser.parse()
-  @zones zones
+
+  @zones Enum.filter(zones, fn zone ->
+           is_nil(zone.until) || NaiveDateTime.compare(zone.until, @beginning_at) == :gt
+         end)
+
   @rules rules
 
   @default_offset_preferences %{
