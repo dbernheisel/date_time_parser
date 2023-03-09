@@ -37,20 +37,10 @@ defmodule DateTimeParser.Combinators do
 
   ### TIMEZONE
   @time_separator ":"
-  @utc ~w(utc gmt z)
-  @eastern ~w(eastern est edt et)
-  @pacific ~w(pacific pst pdt pt)
-  @central ~w(central cst cdt ct)
-  @mountain ~w(mountain mst mdt mt)
-  @alaska ~w(alaska akst akdt akt)
-  @hawaii ~w(hawaii hast hadt hat hst)
-  @timezone_abbreviations @utc ++
-                            @eastern ++
-                            @pacific ++
-                            @central ++
-                            @mountain ++
-                            @alaska ++
-                            @hawaii
+  @utc ~w[utc gmt z]
+  @timezone_abbreviations DateTimeParser.TimezoneAbbreviations.all_abbreviations()
+                          |> Enum.map(&String.downcase/1)
+                          |> Enum.sort_by(&{byte_size(&1), &1}, :desc)
 
   time_separator = string(@time_separator)
 
@@ -59,6 +49,7 @@ defmodule DateTimeParser.Combinators do
     |> Enum.map(&string/1)
     |> choice()
     |> concat([?0..?9] |> ascii_char() |> times(min: 1, max: 2))
+    |> lookahead_not(ascii_char([?/]))
     |> concat(time_separator |> optional() |> ignore())
     |> concat([?0..?9] |> ascii_char() |> times(2) |> optional())
     |> tag(:utc_offset)
@@ -68,6 +59,7 @@ defmodule DateTimeParser.Combinators do
     @utc
     |> Enum.map(&string/1)
     |> choice()
+    |> eos()
     |> replace("UTC")
     |> unwrap_and_tag(:zone_abbr)
     |> label("timezone with offset")
@@ -170,7 +162,7 @@ defmodule DateTimeParser.Combinators do
     |> concat(space_separator |> optional() |> ignore())
     |> concat(am_pm |> optional())
 
-  defparsec(:parse_time, time)
+  defparsec(:parse_time, time, inline: true)
 
   ## DATE
 

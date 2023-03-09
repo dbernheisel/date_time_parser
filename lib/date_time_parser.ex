@@ -8,6 +8,8 @@ defmodule DateTimeParser do
   @type assume_date :: {:assume_date, boolean() | Date.t()}
   @type assume_time :: {:assume_time, boolean() | Time.t()}
   @type assume_utc :: {:assume_utc, boolean()}
+  @type assume_tz_abbreviations :: {:assume_utc, map()}
+  @type assume_tz_offsets :: {:assume_utc, map()}
   @type use_1904_date_system :: {:use_1904_date_system, boolean()}
   @type to_utc :: {:to_utc, boolean()}
 
@@ -39,6 +41,19 @@ defmodule DateTimeParser do
   For Serial timestamps, the parser will use the 1900 Date System by default. If you supply `true`, then
   the 1904 Date System will be used to parse the timestamp.
 
+  * `:assume_tz_offsets`.
+  Timezones may be expressed as time offsets, eg "-0400" to represent 4 hours before GMT. The default
+  assumption for these offsets is to map them directly to "Etc/GMT-4" when possible. However, you may
+  provide your own assumptions. To see the default offets, see
+  `DateTimeParser.TimezoneAbbreviations.default_offsets`.
+
+  * `:assume_tz_abbreviations`.
+  Timezones may be expressed as timezone abbreviations, eg "EST" can represent Eastern Standard Time.
+  The default assumptions for these abbreviations is to map them to the most likely timezone. However,
+  you may prefer a different set of timezone assumptions, eg: "CST" means US Central Standard Time by
+  default, but you may want it to mean China Standard Time; you would provide: `%{"CST" => "Asia/Shanghai"}`
+  To see the default abbreviations, see `DateTimeParser.TimezoneAbbreviations.default_abbreviations`.
+
   * `:parsers` The parsers to use when analyzing the string. When `Parser.Tokenizer`, the appropriate tokenizer
   will be used depending on the function used and conditions found in the string. **Order matters**
   and determines the order in which parsers are attempted. These are the available built-in parsers:
@@ -47,7 +62,13 @@ defmodule DateTimeParser do
   #{for parser <- DateTimeParser.Parser.default_parsers(), do: "  1. `#{inspect(parser)}`\n"}
   """
   @type parse_datetime_options :: [
-          assume_utc() | to_utc() | assume_time() | use_1904_date_system() | parsers()
+          assume_utc()
+          | to_utc()
+          | assume_time()
+          | use_1904_date_system()
+          | parsers()
+          | assume_tz_offsets()
+          | assume_tz_abbreviations()
         ]
 
   @typedoc """

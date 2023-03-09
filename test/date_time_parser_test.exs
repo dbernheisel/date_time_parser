@@ -82,6 +82,32 @@ defmodule DateTimeParserTest do
              end) =~ "Using :epoch is deprecated"
     end
 
+    test "parse_datetime/2, can provide custom abbreviations" do
+      assert {:ok, dt} = DateTimeParser.parse_datetime("2020-01-01T01:01:01 CST")
+      assert dt.time_zone == "America/Chicago"
+
+      assert {:ok, dt} =
+               DateTimeParser.parse_datetime("2020-01-01T01:01:01 CST",
+                 assume_tz_abbreviations: %{"CST" => "Asia/Shanghai"}
+               )
+
+      assert dt.time_zone == "Asia/Shanghai"
+      assert dt.zone_abbr == "CST"
+    end
+
+    test "parse_datetime/2, can provide custom offsets" do
+      assert {:ok, dt} = DateTimeParser.parse_datetime("2020-01-01T01:01:01 -0400")
+      assert dt.time_zone == "Etc/GMT+4"
+
+      assert {:ok, dt} =
+               DateTimeParser.parse_datetime("2020-01-01T01:01:01 -0400",
+                 assume_tz_offsets: %{"-0400" => "America/New_York"}
+               )
+
+      assert dt.time_zone == "America/New_York"
+      assert dt.zone_abbr == "EST"
+    end
+
     test "parse_datetime/2, can turn off parsers" do
       assert {:error, _} = DateTimeParser.parse_datetime("100.0", parsers: [])
 
@@ -407,7 +433,19 @@ defmodule DateTimeParserTest do
 
     test_datetime_parsing(
       "2017-11-04 15:20:47 EST",
-      DateTime.from_naive!(~N[2017-11-04 20:20:47Z], "Etc/UTC"),
+      DateTime.from_naive!(~N[2017-11-04 19:20:47Z], "Etc/UTC"),
+      to_utc: true
+    )
+
+    test_datetime_parsing(
+      "2017-03-04 15:20:47 EDT",
+      DateTime.from_naive!(~N[2017-03-04 20:20:47Z], "Etc/UTC"),
+      to_utc: true
+    )
+
+    test_datetime_parsing(
+      "2017-03-04 15:20:47 EST",
+      DateTime.from_naive!(~N[2017-03-04 20:20:47Z], "Etc/UTC"),
       to_utc: true
     )
 
@@ -500,8 +538,12 @@ defmodule DateTimeParserTest do
 
       assert naive_datetime_result == ~N[2019-01-01 00:00:00]
 
-      assert %{zone_abbr: "PST", time_zone: "PST8PDT", utc_offset: -28_800, std_offset: 0} =
-               result
+      assert %{
+               zone_abbr: "PST",
+               time_zone: "America/Los_Angeles",
+               utc_offset: -28_800,
+               std_offset: 0
+             } = result
     end
 
     test "assume_utc: true returns NaiveDateTime when timezone is undetermined" do
@@ -665,6 +707,20 @@ defmodule DateTimeParserTest do
     test "parse_time! raises an error when fails to parse" do
       assert_raise DateTimeParser.ParseError, ~s|Could not parse "foo"|, fn ->
         DateTimeParser.parse_time!("foo")
+      end
+    end
+  end
+
+  describe "timezones abbreviations" do
+    for abbr <- Enum.sort(DateTimeParser.TimezoneAbbreviations.all_abbreviations()) do
+      @abbr abbr
+
+      test "can parse abbreviation #{@abbr}" do
+        abbr = @abbr
+        %{name: zone} = DateTimeParser.TimezoneAbbreviations.zone_by_abbreviation(abbr)
+
+        assert %DateTime{time_zone: ^zone} =
+                 DateTimeParser.parse_datetime!("2023-03-11 10:00:00 #{abbr}")
       end
     end
   end
