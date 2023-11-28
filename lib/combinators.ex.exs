@@ -400,7 +400,8 @@ defmodule DateTimeParser.Combinators do
       vocal_month_day_time_year,
       formal_date_time,
       formal_date
-    ])
+    ]),
+    export_combinator: true
   )
 
   defparsec(
@@ -411,7 +412,8 @@ defmodule DateTimeParser.Combinators do
       vocal_month_day_time_year,
       us_date_time,
       us_date
-    ])
+    ]),
+    export_combinator: true
   )
 
   # parsec:DateTimeParser.Combinators
