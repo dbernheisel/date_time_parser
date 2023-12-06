@@ -9,7 +9,7 @@ defmodule DateTimeParser.MixProject do
       version: @version,
       homepage_url: "https://hexdocs.pm/date_time_parser",
       source_url: "https://github.com/dbernheisel/date_time_parser",
-      elixir: ">= 1.11.0",
+      elixir: ">= 1.12.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       aliases: aliases(),
       package: package(),
@@ -64,8 +64,7 @@ defmodule DateTimeParser.MixProject do
       {:tz, "~> 0.24", only: [:dev, :test, :bench], runtime: false},
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.20", only: :dev, runtime: false},
-      {:nimble_parsec, "~> 1.0",
-       github: "dashbitco/nimble_parsec", only: [:dev, :test], override: true, runtime: false}
+      {:nimble_parsec, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 

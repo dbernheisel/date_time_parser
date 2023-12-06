@@ -5,6 +5,7 @@
 - Drop Timex as dependency. This required a custom IANA file parser for
   determining timezones and rules that was able to parse timezone abbreviations.
   Doing so requires the use of Elixir functions introduced in Elixir 1.11.
+- Bump NimbleParsec which requires Elixir 1.12.
 
 ## 1.1.5 (2022-10-07)
 
