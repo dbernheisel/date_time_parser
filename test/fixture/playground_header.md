@@ -5,7 +5,8 @@
 Install DateTimeParser in your project
 
 ```elixir
-Mix.install([:date_time_parser])
+Mix.install([:date_time_parser, :tz])
+Application.put_env(:elixir, :time_zone_database, Tz.TimeZoneDatabase)
 ```
 
 ## Usage
@@ -20,7 +21,8 @@ structs. For example:
   DateTimeParser.parse_date("2021-11-09T10:30:00Z"),
   DateTimeParser.parse_time("2021-11-09T10:30:00Z"),
   DateTimeParser.parse("2021-32-32T10:30:00Z"),
-  DateTimeParser.parse("2021-11-09T10:30:00Z")
+  DateTimeParser.parse("2021-11-09T10:30:00Z"),
+  DateTimeParser.parse("2021-11-09T10:30:00 EST")
 ]
 ```
 
@@ -33,7 +35,8 @@ or use the bang functions:
   DateTimeParser.parse_date!("2021-11-09T10:30:00Z"),
   DateTimeParser.parse_time!("2021-11-09T10:30:00Z"),
   DateTimeParser.parse!("2021-32-32T10:30:00Z"),
-  DateTimeParser.parse!("2021-11-09T10:30:00Z")
+  DateTimeParser.parse!("2021-11-09T10:30:00Z"),
+  DateTimeParser.parse!("2021-11-09T10:30:00 EST")
 ]
 ```
 
