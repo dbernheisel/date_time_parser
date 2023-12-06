@@ -136,7 +136,9 @@ defmodule DateTimeParserTest do
 
       assert capture_log(fn ->
                assert {:ok, %NaiveDateTime{}} =
-                        DateTimeParser.parse_datetime("2019-01-01T10:30:00", parsers: [:tokenizer])
+                        DateTimeParser.parse_datetime("2019-01-01T10:30:00",
+                          parsers: [:tokenizer]
+                        )
              end) =~ "Using :tokenizer is deprecated"
     end
   end
