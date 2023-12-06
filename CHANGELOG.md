@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.2.0 (1.2.0 (2023-12-06))
+## unreleased
+
+## 1.2.0 (2023-12-06)
 
 - Drop Timex as dependency. This required a custom IANA file parser for
   determining timezones and rules that was able to parse timezone abbreviations.
