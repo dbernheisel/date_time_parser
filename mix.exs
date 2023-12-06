@@ -43,7 +43,8 @@ defmodule DateTimeParser.MixProject do
         "CHANGELOG*",
         "README*",
         "LICENSE*",
-        "EXAMPLES*"
+        "EXAMPLES*",
+        "priv/tzdata*/*"
       ],
       maintainers: ["David Bernheisel"],
       licenses: ["MIT"],

@@ -365,7 +365,7 @@ defmodule DateTimeParser.TimezoneParser do
   defp clean(v), do: v
 
   defp read_file do
-    Enum.map_join(@sources, "\n", &File.read!/1)
+    Enum.map_join(@sources, "\n", &File.read!(Application.app_dir(:date_time_parser, &1)))
   end
 
   defp remove_comments(line),
