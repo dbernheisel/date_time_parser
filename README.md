@@ -126,8 +126,8 @@ iex> DateTimeParser.parse_time("10:13pm")
 iex> DateTimeParser.parse_time("10:13:34")
 {:ok, ~T[10:13:34]}
 
-iex> DateTimeParser.parse_time("18:14:21.145851000000Z")
-{:ok, ~T[18:14:21.145851]}
+iex> DateTimeParser.parse_time("18:14:21.2.0851000000Z")
+{:ok, ~T[18:14:21.2.0851]}
 
 iex> DateTimeParser.parse_datetime(nil)
 {:error, "Could not parse nil"}
@@ -140,7 +140,7 @@ Add `date_time_parser` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:date_time_parser, "~> 1.1.5"}
+    {:date_time_parser, "~> 1.2.0"}
   ]
 end
 ```

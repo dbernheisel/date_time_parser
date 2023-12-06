@@ -1,6 +1,6 @@
 defmodule DateTimeParser.MixProject do
   use Mix.Project
-  @version "1.1.5"
+  @version "1.2.0"
 
   def project do
     [
