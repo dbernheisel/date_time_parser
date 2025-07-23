@@ -1,5 +1,7 @@
 defmodule DateTimeParser do
-  @moduledoc "README.md" |> File.read!() |> String.split("<!-- MDOC -->") |> Enum.fetch!(1)
+  docs = "README.md" |> File.read!() |> String.split("<!-- MDOC -->") |> Enum.fetch!(1)
+  docs = if elem(:os.type(), 0) == :win32, do: String.replace(docs, "\r\n", "\n"), else: docs
+  @moduledoc docs
   @external_resource "README.md"
 
   import DateTimeParser.Formatters
