@@ -294,7 +294,8 @@ defmodule DateTimeParser.TimezoneParser do
 
   defp handle_kday(year, month, "last" <> day) do
     year
-    |> Date.new!(month + 1, 1)
+    |> Date.new!(month, 1)
+    |> Date.end_of_month()
     |> Kday.last_kday(day_of_week(day))
   end
 

@@ -127,7 +127,7 @@ iex> DateTimeParser.parse_time("10:13:34")
 {:ok, ~T[10:13:34]}
 
 iex> DateTimeParser.parse_time("18:14:21.2.0851000000Z")
-{:ok, ~T[18:14:21.2.0851]}
+{:ok, ~T[18:14:21.2]}
 
 iex> DateTimeParser.parse_datetime(nil)
 {:error, "Could not parse nil"}
