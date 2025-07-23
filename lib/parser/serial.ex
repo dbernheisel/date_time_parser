@@ -97,14 +97,18 @@ defmodule DateTimeParser.Parser.Serial do
     )
   end
 
-  defp time_from_serial(0.0), do: {0, 0, 0}
-
   defp time_from_serial(serial_time) do
-    {hours, min_fraction} = split_float(serial_time * 24)
-    {minutes, sec_fraction} = split_float(min_fraction * 60)
-    {seconds, _microseconds} = split_float(sec_fraction * 60)
+    case serial_time do
+      zero when zero in [+0.0, -0.0] ->
+        {0, 0, 0}
 
-    {hours, minutes, seconds}
+      serial_time ->
+        {hours, min_fraction} = split_float(serial_time * 24)
+        {minutes, sec_fraction} = split_float(min_fraction * 60)
+        {seconds, _microseconds} = split_float(sec_fraction * 60)
+
+        {hours, minutes, seconds}
+    end
   end
 
   defp date_from_serial(serial_date) do
@@ -123,7 +127,7 @@ defmodule DateTimeParser.Parser.Serial do
   defp split_float(float) when float < 0 do
     whole = abs(float) |> Float.floor() |> round()
     fraction = 1 - (abs(float) - whole)
-    fraction = if fraction == 1.0, do: 0.0, else: fraction
+    fraction = if fraction == 1.0, do: +0.0, else: fraction
     {whole * -1, fraction}
   end
 
