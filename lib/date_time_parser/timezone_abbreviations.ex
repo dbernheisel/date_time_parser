@@ -4,6 +4,8 @@ defmodule DateTimeParser.TimezoneAbbreviations do
   to power parsing strings with timezone abbreviations and offsets in them.
   """
 
+  # credo:disable-for-this-file Credo.Check.Refactor.Nesting
+
   @beginning_at Application.compile_env(
                   :date_time_parser,
                   :include_zones_from,
