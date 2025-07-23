@@ -2,6 +2,11 @@
 
 ## unreleased
 
+## 1.2.1 (2025-07-23)
+
+- Fix compiler warnings (floats as +/-)
+- Fix timezone IANA parsing bug when getting the last k day of a month
+
 ## 1.2.0 (2023-12-06)
 
 - Drop Timex as dependency. This required a custom IANA file parser for
