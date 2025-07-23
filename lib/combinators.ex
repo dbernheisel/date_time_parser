@@ -1,5 +1,5 @@
 # Generated from lib/combinators.ex.exs, do not edit.
-# Generated at 2023-12-06 19:12:09Z.
+# Generated at 2025-07-23 13:37:06Z.
 
 defmodule DateTimeParser.Combinators do
   @moduledoc false
@@ -55,7 +55,7 @@ defmodule DateTimeParser.Combinators do
           {:ok, [term], rest, context, line, byte_offset}
           | {:error, reason, rest, context, line, byte_offset}
         when line: {pos_integer, byte_offset},
-             byte_offset: pos_integer,
+             byte_offset: non_neg_integer,
              rest: binary,
              reason: String.t(),
              context: map
@@ -27083,7 +27083,7 @@ defmodule DateTimeParser.Combinators do
           {:ok, [term], rest, context, line, byte_offset}
           | {:error, reason, rest, context, line, byte_offset}
         when line: {pos_integer, byte_offset},
-             byte_offset: pos_integer,
+             byte_offset: non_neg_integer,
              rest: binary,
              reason: String.t(),
              context: map
@@ -43924,7 +43924,7 @@ defmodule DateTimeParser.Combinators do
           {:ok, [term], rest, context, line, byte_offset}
           | {:error, reason, rest, context, line, byte_offset}
         when line: {pos_integer, byte_offset},
-             byte_offset: pos_integer,
+             byte_offset: non_neg_integer,
              rest: binary,
              reason: String.t(),
              context: map
@@ -49955,7 +49955,7 @@ defmodule DateTimeParser.Combinators do
           {:ok, [term], rest, context, line, byte_offset}
           | {:error, reason, rest, context, line, byte_offset}
         when line: {pos_integer, byte_offset},
-             byte_offset: pos_integer,
+             byte_offset: non_neg_integer,
              rest: binary,
              reason: String.t(),
              context: map
@@ -55364,7 +55364,7 @@ defmodule DateTimeParser.Combinators do
           {:ok, [term], rest, context, line, byte_offset}
           | {:error, reason, rest, context, line, byte_offset}
         when line: {pos_integer, byte_offset},
-             byte_offset: pos_integer,
+             byte_offset: non_neg_integer,
              rest: binary,
              reason: String.t(),
              context: map
