@@ -14,23 +14,23 @@ jobs:
       MIX_ENV: test
       CI: "true"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: '25'
-          elixir-version: '1.14.3'
+          otp-version: '27'
+          elixir-version: '1.18.4'
       - run: mix deps.get --only dev
       - run: mix format --check-formatted
       - run: mix credo --strict
 
   test-oldest:
-    runs-on: ubuntu-20.04
+    runs-on: windows-2022
     name: Tests on oldest version
     env:
       MIX_ENV: test
       CI: "true"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
           otp-version: '22'
@@ -47,11 +47,11 @@ jobs:
       MIX_ENV: test
       CI: "true"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: '25'
-          elixir-version: '1.14.3'
+          otp-version: '27'
+          elixir-version: '1.18.4'
       - run: rm mix.lock
       - run: mix deps.get
       - run: mix compile --force --warnings-as-errors
