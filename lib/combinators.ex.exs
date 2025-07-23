@@ -94,8 +94,8 @@ defmodule DateTimeParser.Combinators do
 
   ## TIME
 
-  @hour_num ~w(00 01 02 03 04 05 06 07 08 09) ++ Enum.map(23..0, &to_string/1)
-  @second_minute_num ~w(00 01 02 03 04 05 06 07 08 09) ++ Enum.map(59..0, &to_string/1)
+  @hour_num ~w(00 01 02 03 04 05 06 07 08 09) ++ Enum.map(23..0//-1, &to_string/1)
+  @second_minute_num ~w(00 01 02 03 04 05 06 07 08 09) ++ Enum.map(59..0//-1, &to_string/1)
   @am_pm ~w(am a.m a.m. a_m pm p.m p.m. p_m a p)
 
   invalid_time_first_digit = ascii_char([?6..?9])
