@@ -241,6 +241,13 @@ defmodule DateTimeParser.Combinators do
     |> unwrap_and_tag(:month)
     |> label("numeric month from 01-12")
 
+  ordinal_suffix =
+    ~w(st nd rd th)
+    |> Enum.map(&string/1)
+    |> choice()
+    |> ignore()
+    |> label("ordinal suffix (st, nd, rd, th)")
+
   day2 =
     (~w(01 02 03 04 05 06 07 08 09) ++ Enum.map(10..31, &to_string/1))
     |> Enum.map(&string/1)
@@ -255,6 +262,7 @@ defmodule DateTimeParser.Combinators do
 
   day =
     choice([day2, day1])
+    |> concat(ordinal_suffix |> optional())
     |> map(:to_integer)
     |> unwrap_and_tag(:day)
     |> label("numeric day from 01-31")

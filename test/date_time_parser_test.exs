@@ -392,6 +392,7 @@ defmodule DateTimeParserTest do
   describe "parse_datetime/1 - DMY" do
     test_datetime_parsing("23-05-2019 @ 10:01", ~N[2019-05-23 10:01:00], assume_time: true)
     test_datetime_parsing("9-Feb-18", ~N[2018-02-09 00:00:00], assume_time: true)
+    test_datetime_parsing("14-Jul-2023", ~N[2023-07-14 00:00:00], assume_time: true)
     test_datetime_parsing("9-2-32", ~N[2032-02-09 00:00:00], assume_time: true)
   end
 
@@ -582,6 +583,20 @@ defmodule DateTimeParserTest do
     test_datetime_parsing("11 July 2017 1:43:46 PM", ~N[2017-07-11 13:43:46])
   end
 
+  describe "parse_datetime/1 - ordinal suffixes" do
+    test_datetime_parsing("Sunday 5th Jan 2025 10:30:00 AM", ~N[2025-01-05 10:30:00])
+    test_datetime_parsing("Monday 1st January 2025 09:15:30", ~N[2025-01-01 09:15:30])
+    test_datetime_parsing("Tuesday 2nd February 2024 14:20:00", ~N[2024-02-02 14:20:00])
+    test_datetime_parsing("Wednesday 3rd March 2023 3:45 PM", ~N[2023-03-03 15:45:00])
+    test_datetime_parsing("5th Jan 2025 10:30:00 AM", ~N[2025-01-05 10:30:00])
+    test_datetime_parsing("1st January 2025 09:15:30", ~N[2025-01-01 09:15:30])
+    test_datetime_parsing("21st April 2022", ~N[2022-04-21 00:00:00], assume_time: true)
+    test_datetime_parsing("22nd May 2021 12:00 PM", ~N[2021-05-22 12:00:00])
+    test_datetime_parsing("11th July 2017 1:43:46 PM", ~N[2017-07-11 13:43:46])
+    test_datetime_parsing("12th August 2018 08:15:22", ~N[2018-08-12 08:15:22])
+    test_datetime_parsing("13th Sep 2019 9:00 AM", ~N[2019-09-13 09:00:00])
+  end
+
   describe "parse_date/1 - vocal" do
     test_date_parsing("Sunday 01 January 2017 10:11:02 PM", ~D[2017-01-01])
     test_date_parsing("Sunday, 01 January 2017 10:11:02 PM", ~D[2017-01-01])
@@ -594,6 +609,28 @@ defmodule DateTimeParserTest do
     test_date_parsing("19 September 2018 08:15:22 AM", ~D[2018-09-19])
     test_date_parsing("19 September 18 2:33:08 PM", ~D[2018-09-19])
     test_date_parsing("11 July 2017 1:43:46 PM", ~D[2017-07-11])
+  end
+
+  describe "parse_date/1 - ordinal suffixes" do
+    test_date_parsing("Sunday 5th Jan 2025", ~D[2025-01-05])
+    test_date_parsing("Monday 1st January 2025", ~D[2025-01-01])
+    test_date_parsing("Tuesday 2nd February 2024", ~D[2024-02-02])
+    test_date_parsing("Wednesday 3rd March 2023", ~D[2023-03-03])
+    test_date_parsing("Thursday 21st April 2022", ~D[2022-04-21])
+    test_date_parsing("Friday 22nd May 2021", ~D[2021-05-22])
+    test_date_parsing("Saturday 23rd June 2020", ~D[2020-06-23])
+    test_date_parsing("Sun 31st Dec 2019", ~D[2019-12-31])
+    test_date_parsing("5th Jan 2025", ~D[2025-01-05])
+    test_date_parsing("1st January 2025", ~D[2025-01-01])
+    test_date_parsing("2nd February 2024", ~D[2024-02-02])
+    test_date_parsing("3rd March 2023", ~D[2023-03-03])
+    test_date_parsing("21st April 2022", ~D[2022-04-21])
+    test_date_parsing("22nd May 2021", ~D[2021-05-22])
+    test_date_parsing("23rd June 2020", ~D[2020-06-23])
+    test_date_parsing("31st Dec 2019", ~D[2019-12-31])
+    test_date_parsing("4th Oct 2018", ~D[2018-10-04])
+    test_date_parsing("25th November 2017", ~D[2017-11-25])
+    test_date_parsing("30th Sept 2016", ~D[2016-09-30])
   end
 
   describe "parse_date/1 - epoch" do
