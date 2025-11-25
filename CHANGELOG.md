@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## 1.3.0 (2025-11-24)
 
 - Support [day of week] [nth] [month name] [year] format. Thanks @s3cur3 (PR #15)
 

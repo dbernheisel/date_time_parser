@@ -85,7 +85,7 @@ iex> DateTimeParser.parse("2019-03-11T22:30:00.234+00:00")
 iex> DateTimeParser.parse_date("2034-01-13")
 {:ok, ~D[2034-01-13]}
 
-iex> DateTimeParser.parse_date("01/01/2017")
+iex> DateTimeParser.parse_date("01/01.3.07")
 {:ok, ~D[2017-01-01]}
 
 iex> DateTimeParser.parse_datetime("1564154204")
@@ -140,7 +140,7 @@ Add `date_time_parser` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:date_time_parser, "~> 1.2.1"}
+    {:date_time_parser, "~> 1.3.0"}
   ]
 end
 ```
