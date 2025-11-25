@@ -38,6 +38,7 @@ jobs:
       - run: rm mix.lock
       - run: mix deps.get
       - run: mix compile --force --warnings-as-errors
+      - run: mix compile.nimble
       - run: mix test
 
   test:
@@ -55,4 +56,5 @@ jobs:
       - run: rm mix.lock
       - run: mix deps.get
       - run: mix compile --force --warnings-as-errors
+      - run: mix compile.nimble
       - run: mix test
