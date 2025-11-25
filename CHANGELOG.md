@@ -2,6 +2,8 @@
 
 ## unreleased
 
+- Support [day of week] [nth] [month name] [year] format. Thanks @s3cur3 (PR #15)
+
 ## 1.2.1 (2025-07-23)
 
 - Fix compiler warnings (floats as +/-)
