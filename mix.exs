@@ -64,7 +64,7 @@ defmodule DateTimeParser.MixProject do
       {:benchee, "~> 1.0", only: [:bench], runtime: false},
       {:tz, "~> 0.24", only: [:dev, :test, :bench], runtime: false},
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.20", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.20", only: :dev, warn_if_outdated: true, runtime: false},
       {:nimble_parsec, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
