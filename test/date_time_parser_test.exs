@@ -264,6 +264,12 @@ defmodule DateTimeParserTest do
     test_parsing("jul-10-18", "2018-07-10")
   end
 
+  describe "parsing - unicode whitespace" do
+    assert {:ok, ~N[2018-08-30 11:31:18]} = DateTimeParser.parse("Thursday 30\tAugust\u{202F}2018\u{1680}11:31:18 AM")
+    assert {:ok, ~D[2018-08-30]} = DateTimeParser.parse_date("Thursday 30\tAugust\u{202F}2018")
+    assert {:ok, ~T[13:30:34]} = DateTimeParser.parse_time("1:30:34\u{202F}PM")
+  end
+
   describe "parse_datetime/1 - serial" do
     test_datetime_parsing("41261.6013888889", ~N[2012-12-18T14:26:00])
     test_datetime_parsing("-45103.1454398148", ~N[1776-07-04T20:30:34])
