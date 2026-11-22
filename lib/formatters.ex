@@ -119,7 +119,7 @@ defmodule DateTimeParser.Formatters do
     string
     |> String.trim()
     |> String.replace(" @ ", "T")
-    |> String.replace(~r{[[:space:]]+}, " ")
+    |> String.replace(~r{[[:space:]]+}u, " ")
     |> String.replace(" - ", "-")
     |> String.replace("//", "/")
     |> String.replace(~r{=|"|'|,|\\}, "")
